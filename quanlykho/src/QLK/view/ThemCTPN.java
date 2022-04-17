@@ -14,7 +14,7 @@ import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import QLK.controller.CTNhapControl;
-import qlk.model.ChiTietNhap;
+import QLK.model.ChiTietNhap;
 
 /**
  *

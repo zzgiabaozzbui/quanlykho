@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qlk.model;
+package QLK.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +30,7 @@ public class SanPhamDao {
              while(rs.next())
              {
                  sp=new SanPham();
-                 sp.setMaSanPham(rs.getInt("maSanPham"));
+                 sp.setMaSanPham(rs.getString("maSanPham"));
                  sp.setTenSanPham(rs.getString("tenSanPham"));
                  sp.setMoTa(rs.getString("moTa"));
                  list.add(sp);

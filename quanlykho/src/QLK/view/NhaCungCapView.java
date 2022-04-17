@@ -29,7 +29,6 @@ public class NhaCungCapView extends javax.swing.JFrame {
     public NhaCungCapView() {
         initComponents();
         addCbo();
-        Clear();
         loadNhaCungCapToJTable();
         txtMaNCC.setEnabled(false);
     }

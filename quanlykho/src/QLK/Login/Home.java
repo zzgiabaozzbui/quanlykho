@@ -84,7 +84,7 @@ public class Home extends javax.swing.JFrame{
 
     public void HideMenu()
         {
-            PQ();
+            //PQ();
             pnSP.setVisible(false);
             pnTK.setVisible(false);
             pnQL.setVisible(false);

@@ -7,7 +7,7 @@ package QLK.Login;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import view.QuanTriView;
+import QLK.view.QuanTriView;
 
 /**
  *

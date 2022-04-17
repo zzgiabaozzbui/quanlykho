@@ -1,4 +1,4 @@
-package controller;
+package QLK.controller;
 
 
 import QLK.connect.MyConnection;
@@ -9,9 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import model.staff;
-import model.taikhoan;
-import model.user;
+import QLK.model.staff;
+import QLK.model.taikhoan;
+import QLK.model.user;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

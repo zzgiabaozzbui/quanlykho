@@ -7,7 +7,7 @@ package QLK.Login;
 
 import QLK.util.PropertiesNVNow;
 import QLK.util.PropertiesUtil;
-import controller.taikhoancontroller;
+import QLK.controller.taikhoancontroller;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.MouseAdapter;
@@ -22,8 +22,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.staff;
-import model.user;
+import QLK.model.staff;
+import QLK.model.user;
 
 /**
  *

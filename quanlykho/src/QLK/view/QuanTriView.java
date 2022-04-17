@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package QLK.view;
 
 import QLK.Login.Home;
-import controller.Xuatexcel;
-import controller.taikhoancontroller;
+import QLK.controller.Xuatexcel;
+import QLK.controller.taikhoancontroller;
 import java.awt.Color;
 import java.awt.Font;
 import static java.awt.Frame.MAXIMIZED_BOTH;
@@ -22,9 +22,9 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
-import model.staff;
-import model.taikhoan;
-import model.user;
+import QLK.model.staff;
+import QLK.model.taikhoan;
+import QLK.model.user;
 
 /**
  *

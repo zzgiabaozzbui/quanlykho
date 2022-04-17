@@ -5,18 +5,9 @@
  */
 package QLK.Login;
 
-import java.awt.Color;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.plaf.PanelUI;
 import view.QuanTriView;
-import view.TaiKhoanview;
 
 /**
  *

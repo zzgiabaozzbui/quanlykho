@@ -294,7 +294,7 @@ public class QuanTriView extends javax.swing.JFrame {
         pnSearch6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         iconSearch6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        iconSearch6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search30.png"))); // NOI18N
+        iconSearch6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/search30.png"))); // NOI18N
         iconSearch6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         txtSearch6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
@@ -316,7 +316,7 @@ public class QuanTriView extends javax.swing.JFrame {
                 .addComponent(iconSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1358, 1358, 1358))
+                .addGap(1274, 1274, 1274))
         );
         pnSearch6Layout.setVerticalGroup(
             pnSearch6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,7 +324,7 @@ public class QuanTriView extends javax.swing.JFrame {
                 .addGroup(pnSearch6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconSearch6))
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -469,7 +469,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnT.setBackground(new java.awt.Color(255, 255, 255));
         btnT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_35_gradian.png"))); // NOI18N
+        btnT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/add_35_gradian.png"))); // NOI18N
         btnT.setText("Thêm");
         btnT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -485,7 +485,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnS.setBackground(new java.awt.Color(255, 255, 255));
         btnS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update_35_gradian.png"))); // NOI18N
+        btnS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/update_35_gradian.png"))); // NOI18N
         btnS.setText("Sửa");
         btnS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -501,7 +501,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnX.setBackground(new java.awt.Color(255, 255, 255));
         btnX.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete_35_gradien.png"))); // NOI18N
+        btnX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/delete_35_gradien.png"))); // NOI18N
         btnX.setText("Xóa");
         btnX.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnX.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -517,7 +517,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnReset.setBackground(new java.awt.Color(255, 255, 255));
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quay_lai_35.png"))); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/quay_lai_35.png"))); // NOI18N
         btnReset.setText("Nhập lại");
         btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -528,7 +528,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnExcel.setBackground(new java.awt.Color(255, 255, 255));
         btnExcel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/excel_35.png"))); // NOI18N
+        btnExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/excel_35.png"))); // NOI18N
         btnExcel.setText("Xuất excel");
         btnExcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcel.addActionListener(new java.awt.event.ActionListener() {
@@ -539,7 +539,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnBieuDo.setBackground(new java.awt.Color(255, 255, 255));
         btnBieuDo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBieuDo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chart_35.png"))); // NOI18N
+        btnBieuDo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/chart_35.png"))); // NOI18N
         btnBieuDo.setText("Phân quyền");
         btnBieuDo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBieuDo.addActionListener(new java.awt.event.ActionListener() {
@@ -550,7 +550,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
         btnexit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/thoat_35.png"))); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/thoat_35.png"))); // NOI18N
         btnexit.setText("Thoát");
         btnexit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -624,15 +624,14 @@ public class QuanTriView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pnSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(794, 794, 794))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(886, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
+                .addGap(32, 32, 32)
+                .addComponent(pnSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(794, 1440, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(886, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()

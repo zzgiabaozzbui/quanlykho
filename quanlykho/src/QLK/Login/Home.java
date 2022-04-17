@@ -44,6 +44,11 @@ public class Home extends javax.swing.JFrame{
             btnQLNV.setVisible(true);
             btnDangXuat.setVisible(true);
 
+            btnQL.setVisible(false);
+            
+            btnNCC.setVisible(false);
+
+            btnKH.setVisible(false);
             
         
         }else if(st==2){
@@ -53,7 +58,7 @@ public class Home extends javax.swing.JFrame{
             btnQLNV.setVisible(false);
             btnDangXuat.setVisible(true);
 
-            btnQLK.setVisible(true);
+            btnQL.setVisible(true);
             btnSanPham.setVisible(false);
 
             btnNCC.setVisible(true);
@@ -72,9 +77,9 @@ public class Home extends javax.swing.JFrame{
             btnQLNV.setVisible(false);
             btnDangXuat.setVisible(true);
 
-            btnQLK.setVisible(true);
+            btnQL.setVisible(true);
             btnQLXK.setVisible(true);
-            btnNK.setVisible(false);
+            btnK.setVisible(false);
 
         
         }
@@ -112,12 +117,13 @@ public class Home extends javax.swing.JFrame{
         btnDangXuat = new javax.swing.JLabel();
         btnQLTK = new javax.swing.JLabel();
         btnQLNV = new javax.swing.JLabel();
-        btnQLK = new javax.swing.JLabel();
+        btnQL = new javax.swing.JLabel();
         btnTK = new javax.swing.JLabel();
         pnQL = new javax.swing.JPanel();
         btnQLXK = new javax.swing.JLabel();
-        btnNK = new javax.swing.JLabel();
+        btnK = new javax.swing.JLabel();
         btnSanPham = new javax.swing.JLabel();
+        btnNK = new javax.swing.JLabel();
         btnTT = new javax.swing.JLabel();
         btnExit = new javax.swing.JLabel();
         btnNCC = new javax.swing.JLabel();
@@ -258,17 +264,17 @@ public class Home extends javax.swing.JFrame{
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        btnQLK.setBackground(new java.awt.Color(255, 255, 255));
-        btnQLK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnQLK.setForeground(new java.awt.Color(255, 255, 255));
-        btnQLK.setText("Quản Lý Kho");
-        btnQLK.setIconTextGap(15);
-        btnQLK.setMaximumSize(new java.awt.Dimension(172, 48));
-        btnQLK.setMinimumSize(new java.awt.Dimension(172, 48));
-        btnQLK.setPreferredSize(new java.awt.Dimension(172, 48));
-        btnQLK.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnQL.setBackground(new java.awt.Color(255, 255, 255));
+        btnQL.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnQL.setForeground(new java.awt.Color(255, 255, 255));
+        btnQL.setText("Quản Lý ");
+        btnQL.setIconTextGap(15);
+        btnQL.setMaximumSize(new java.awt.Dimension(172, 48));
+        btnQL.setMinimumSize(new java.awt.Dimension(172, 48));
+        btnQL.setPreferredSize(new java.awt.Dimension(172, 48));
+        btnQL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnQLKMouseClicked(evt);
+                btnQLMouseClicked(evt);
             }
         });
 
@@ -303,16 +309,16 @@ public class Home extends javax.swing.JFrame{
             }
         });
 
-        btnNK.setBackground(new java.awt.Color(255, 255, 255));
-        btnNK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnNK.setForeground(new java.awt.Color(255, 255, 255));
-        btnNK.setText("            Quản lý nhập kho");
-        btnNK.setMaximumSize(new java.awt.Dimension(150, 28));
-        btnNK.setMinimumSize(new java.awt.Dimension(150, 28));
-        btnNK.setPreferredSize(new java.awt.Dimension(150, 28));
-        btnNK.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnK.setBackground(new java.awt.Color(255, 255, 255));
+        btnK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnK.setForeground(new java.awt.Color(255, 255, 255));
+        btnK.setText("            Quản lý kho");
+        btnK.setMaximumSize(new java.awt.Dimension(150, 28));
+        btnK.setMinimumSize(new java.awt.Dimension(150, 28));
+        btnK.setPreferredSize(new java.awt.Dimension(150, 28));
+        btnK.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnNKMouseClicked(evt);
+                btnKMouseClicked(evt);
             }
         });
 
@@ -329,17 +335,33 @@ public class Home extends javax.swing.JFrame{
             }
         });
 
+        btnNK.setBackground(new java.awt.Color(255, 255, 255));
+        btnNK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnNK.setForeground(new java.awt.Color(255, 255, 255));
+        btnNK.setText("            Quản lý nhập kho");
+        btnNK.setMaximumSize(new java.awt.Dimension(150, 28));
+        btnNK.setMinimumSize(new java.awt.Dimension(150, 28));
+        btnNK.setPreferredSize(new java.awt.Dimension(150, 28));
+        btnNK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNKMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnQLLayout = new javax.swing.GroupLayout(pnQL);
         pnQL.setLayout(pnQLLayout);
         pnQLLayout.setHorizontalGroup(
             pnQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnQLXK, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
             .addComponent(btnSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnNK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnQLLayout.setVerticalGroup(
             pnQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnQLLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnQLLayout.createSequentialGroup()
+                .addComponent(btnK, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnNK, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnQLXK, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -472,7 +494,7 @@ public class Home extends javax.swing.JFrame{
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnQLK, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
             .addComponent(pnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -489,10 +511,10 @@ public class Home extends javax.swing.JFrame{
                 .addGap(0, 0, 0)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnQLK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addComponent(btnQL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnQL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -637,11 +659,11 @@ public class Home extends javax.swing.JFrame{
         //        new ThongTinPhong().setVisible(true);
     }//GEN-LAST:event_btnSanPhamMouseClicked
 
-    private void btnNKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNKMouseClicked
+    private void btnKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKMouseClicked
         //        HideMenu();
         //        h.dispose();
         //        new Staffview().setVisible(true);
-    }//GEN-LAST:event_btnNKMouseClicked
+    }//GEN-LAST:event_btnKMouseClicked
 
     private void btnQLXKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLXKMouseClicked
         //        HideMenu();
@@ -660,7 +682,7 @@ public class Home extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_btnTKMouseClicked
 
-    private void btnQLKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLKMouseClicked
+    private void btnQLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLMouseClicked
         boolean a = pnQL.isVisible();
         HideMenu();
         if (a==true) {
@@ -668,7 +690,7 @@ public class Home extends javax.swing.JFrame{
         } else {
             pnQL.setVisible(true);
         }
-    }//GEN-LAST:event_btnQLKMouseClicked
+    }//GEN-LAST:event_btnQLMouseClicked
 
     private void btnQLTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLTKMouseClicked
                 HideMenu();
@@ -684,6 +706,10 @@ public class Home extends javax.swing.JFrame{
         //        h.dispose();
         //        new login().setVisible(true);
     }//GEN-LAST:event_btnDangXuatMouseClicked
+
+    private void btnNKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNKMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNKMouseClicked
 
     /**
      * @param args the command line arguments
@@ -727,10 +753,11 @@ public class Home extends javax.swing.JFrame{
     private javax.swing.JLabel btnBC;
     private javax.swing.JLabel btnDangXuat;
     private javax.swing.JLabel btnExit;
+    private javax.swing.JLabel btnK;
     private javax.swing.JLabel btnKH;
     private javax.swing.JLabel btnNCC;
     private javax.swing.JLabel btnNK;
-    private javax.swing.JLabel btnQLK;
+    private javax.swing.JLabel btnQL;
     private javax.swing.JLabel btnQLNV;
     private javax.swing.JLabel btnQLPT;
     private javax.swing.JLabel btnQLSP;

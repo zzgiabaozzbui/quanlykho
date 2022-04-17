@@ -376,4 +376,32 @@ public class taikhoancontroller {
         }
         return 0;
     }
+    
+    public List<user> getAll(String key) {
+        List<user> list = new ArrayList<>();
+        try {
+            String sql_select ="SELECT taikhoan.taikhoan,taikhoan.matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,taikhoan.trangthai,taikhoan.quyen\n" +
+                                " FROM taikhoan\n" +
+                                " INNER JOIN nhanvien\n" +
+                                " ON nhanvien.maNV = taikhoan.maNV where taikhoan like '%"+key+"%';";
+            PreparedStatement ps = conn.prepareStatement(sql_select);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                
+                String tk = rs.getString("taikhoan");
+                String makhau = rs.getString("matkhau");
+                String maNV = rs.getString("maNV");
+                String tennv = rs.getString("tenNV");
+                String email = rs.getString("email");
+                String sdt  = rs.getString("sdt");
+                int trangthai  = rs.getInt("trangthai");
+                int quyen  = rs.getInt("quyen");
+                System.out.println(quyen+"");
+                list.add(new user(tk, makhau ,maNV, tennv, email, sdt, trangthai,quyen));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }

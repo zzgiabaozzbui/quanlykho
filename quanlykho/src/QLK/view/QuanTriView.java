@@ -201,7 +201,7 @@ public class QuanTriView extends javax.swing.JFrame {
         tblTK = new javax.swing.JTable();
         pnSearch6 = new javax.swing.JPanel();
         iconSearch6 = new javax.swing.JLabel();
-        txtSearch6 = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -297,14 +297,14 @@ public class QuanTriView extends javax.swing.JFrame {
         iconSearch6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/search30.png"))); // NOI18N
         iconSearch6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        txtSearch6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        txtSearch6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtSearch6.setText("Tìm kiếm...");
-        txtSearch6.setBorder(null);
-        txtSearch6.setName(""); // NOI18N
-        txtSearch6.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        txtSearch.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtSearch.setText("Tìm kiếm...");
+        txtSearch.setBorder(null);
+        txtSearch.setName(""); // NOI18N
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearch6ActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
 
@@ -315,14 +315,14 @@ public class QuanTriView extends javax.swing.JFrame {
             .addGroup(pnSearch6Layout.createSequentialGroup()
                 .addComponent(iconSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1274, 1274, 1274))
         );
         pnSearch6Layout.setVerticalGroup(
             pnSearch6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnSearch6Layout.createSequentialGroup()
                 .addGroup(pnSearch6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSearch6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconSearch6))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -678,9 +678,9 @@ public class QuanTriView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSearch6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearch6ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearch6ActionPerformed
+    }//GEN-LAST:event_txtSearchActionPerformed
 
     private void txtTKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTKActionPerformed
         // TODO add your handling code here:
@@ -759,9 +759,57 @@ public class QuanTriView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnexitActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        
+        if (txtSearch.getText().equals("Tìm kiếm...")) {
+            loadTable();
+        } else {
+            loadTable(txtSearch.getText());
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
+    private void loadTable(String key){
+        dtmDanhSach = new DefaultTableModel();
+        
+        String[] columnTitle = { "Tài khoản","Mật khẩu",  "Mã nhân viên", "Tên Nhân viên", "Email","Số điện thoại","Trạng thái","Quyền"};
+        dtmDanhSach.setColumnIdentifiers(columnTitle);
+        Object[] dataRow;
+        List<user> lisstaff = userdao.getAll(key);
+        for (user p : lisstaff) {
+            dataRow = new Object[]{p.getTaikhoan(),p.getMatkhau(),p.getMaNV(),p.getTenNV(),p.getEmail(),p.getSdt(),userdao.doiTT(p.getTrangthai()),userdao.doiPQ(p.getQuyen())};
+            System.out.println(p.getTrangthai()+"");
+            dtmDanhSach.addRow(dataRow);
+        }
 
+        tblTK.setModel(dtmDanhSach);
+        
+        
+        tblTK.getColumnModel().getColumn(0).setPreferredWidth(15);
+        tblTK.getColumnModel().getColumn(1).setPreferredWidth(15);
+        tblTK.getColumnModel().getColumn(2).setPreferredWidth(50);
+        tblTK.getColumnModel().getColumn(3).setPreferredWidth(25);
+        tblTK.getColumnModel().getColumn(4).setPreferredWidth(5);
+        tblTK.getColumnModel().getColumn(5).setPreferredWidth(50);
+        tblTK.getColumnModel().getColumn(6).setPreferredWidth(50);
+//        tblTK.getColumnModel().getColumn(7).setPreferredWidth(90);
+        
+        lstNhanVien.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+
+                if (!e.getValueIsAdjusting()) {
+//                    loadcboStaff();
+                    
+                    Object[] dataRow;
+                    String maNV = lstNhanVien.getSelectedValue().getMaNV();
+                    staff selectedValues = std.getStaff(maNV);
+                    txtMaNV.setText(selectedValues.getMaNV());
+                    cboQ.setSelectedItem(selectedValues.getChucVu());
+                    txtTen.setText(selectedValues.getTenNV());
+                    txtemail.setText(selectedValues.getEmail());
+                    txtbp.setText(selectedValues.getSdt());
+                    
+                }
+            }
+        });
+    }
     private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaNVActionPerformed
@@ -941,7 +989,7 @@ public class QuanTriView extends javax.swing.JFrame {
     private javax.swing.JTable tblTK;
     private javax.swing.JTextField txtMK;
     private javax.swing.JTextField txtMaNV;
-    private javax.swing.JTextField txtSearch6;
+    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtTK;
     private javax.swing.JTextField txtTen;
     private javax.swing.JTextField txtbp;

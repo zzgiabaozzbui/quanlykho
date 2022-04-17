@@ -144,12 +144,12 @@ public class Home extends javax.swing.JFrame{
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("MIA HOTEL");
+        jLabel5.setText("QuangAnhStore");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Hotels & Spa");
+        jLabel6.setText("Prestige & Quality");
 
         lblCV.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCV.setForeground(new java.awt.Color(255, 255, 255));

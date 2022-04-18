@@ -16,6 +16,11 @@ public class Kho {
     public Kho() {
     }
 
+    public Kho(String tenKho) {
+        this.tenKho = tenKho;
+    }
+    
+
     public Kho(int maKho) {
         this.maKho = maKho;
     }
@@ -40,14 +45,14 @@ public class Kho {
     public void setTenKho(String tenKho) {
         this.tenKho = tenKho;
     }
-<<<<<<< Updated upstream
+
 
     @Override
     public String toString() {
         return "Kho{" + "maKho=" + maKho + ", tenKho=" + tenKho + '}';
     }
     
-=======
->>>>>>> Stashed changes
-    
 }
+    
+    
+

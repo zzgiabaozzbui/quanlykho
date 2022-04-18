@@ -5,17 +5,36 @@
  */
 package QLK.view;
 
+import QLK.controller.KhoController;
+import QLK.model.Kho;
+import QLK.model.SanPham;
+import java.awt.Color;
+import java.util.List;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pham Thang <Thangyb2706@gmail.com>
  */
 public class KhoView extends javax.swing.JFrame {
-
+    DefaultTableModel defaultTableModel;
+    KhoController khoController=new KhoController();
+    public String state;
+    
     /**
      * Creates new form KhoView
      */
     public KhoView() {
         initComponents();
+        loadKhoTable();
+        setColorButton();
+        state="reset";
+        loadbtn(state);
+        setTextChange();
     }
 
     /**
@@ -36,9 +55,9 @@ public class KhoView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblKho = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtTimKiem = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnSua = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
@@ -99,7 +118,7 @@ public class KhoView extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(99, 184, 255));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblKho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -110,7 +129,12 @@ public class KhoView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblKho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKhoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblKho);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -127,7 +151,7 @@ public class KhoView extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addComponent(jLabel2)
                         .addGap(29, 29, 29)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 871, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -139,7 +163,7 @@ public class KhoView extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
@@ -149,14 +173,39 @@ public class KhoView extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnLuu.setText("Lưu");
+        btnLuu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuuActionPerformed(evt);
+            }
+        });
 
         btnLamMoi.setText("Làm mới");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
         btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -241,6 +290,146 @@ public class KhoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        state="insert";
+        loadbtn(state);
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        state="update";
+        loadbtn(state);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        state="delete";
+        int confirm=JOptionPane.showConfirmDialog(rootPane, "Bạn có thực sự muốn xóa?","Cảnh báo",JOptionPane.YES_NO_OPTION);
+        boolean error=false;
+        if(confirm==0)
+        {
+            int maKho=0;
+            try {
+                maKho=Integer.parseInt(txtMaKho.getText().trim());
+            } catch (Exception e) {
+                error=true;
+            }
+            
+            Kho k= new Kho(maKho,"");
+            if(error){
+                JOptionPane.showMessageDialog(rootPane, "Vui lòng click vào bảng để chọn đối tượng cần xóa");
+            }
+            else{
+                if(khoController.delete(k)>0)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Bạn đã xóa thành công");
+                loadKhoTable();
+                loadbtn(state);
+            }
+            else
+                JOptionPane.showMessageDialog(rootPane, "Bạn đã xóa thất bại");
+            }
+            
+        }
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        // TODO add your handling code here:
+        state="reset";
+        loadbtn(state);
+    }//GEN-LAST:event_btnLamMoiActionPerformed
+
+    private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
+        // TODO add your handling code here:
+        switch(state)
+        {
+            case "insert":
+                boolean checkError=false;
+             
+                int maKho= Integer.parseInt(txtMaKho.getText().trim());
+                String tenKho= txtTenKho.getText().trim();
+               
+                if(tenKho.length()==0)
+                {        
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tên kho","Cảnh báo",JOptionPane.WARNING_MESSAGE);                    
+                }
+                else{                   
+                    Kho kho= new Kho(maKho,tenKho);
+                    Optional<Kho> checkmaKho = null;
+                    checkmaKho=khoController.get(maKho);
+                    
+                    if(checkmaKho.get().getTenKho()!=null){
+                        JOptionPane.showMessageDialog(rootPane, "Đã tồn tại kho này","Cảnh báo",JOptionPane.WARNING_MESSAGE);
+                        System.out.println(checkmaKho.get().getTenKho()+":");
+                        txtMaKho.requestFocus();
+                    }              
+                    else{
+                        if(checkError==false)
+                        {
+                            if(khoController.insert(kho)==1) {
+                        JOptionPane.showMessageDialog(rootPane, "Bạn đã thêm mới thành công","Chúc mừng",JOptionPane.PLAIN_MESSAGE);
+                        loadKhoTable();
+                        state="reset";
+                        loadbtn(state);
+                    }
+                    else {
+                       JOptionPane.showMessageDialog(rootPane, "Bạn đã thêm mới thất bại","Chia buồn",JOptionPane.PLAIN_MESSAGE);
+                     }
+                        }
+                    }
+                }
+                break;
+
+            case "update":
+                boolean checkUpdate=false;                 
+                maKho= Integer.parseInt(txtMaKho.getText().trim());
+                tenKho= txtTenKho.getText().trim();
+   
+                
+                
+                if(tenKho.length()==0)
+                {        
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tên kho","Cảnh báo",JOptionPane.WARNING_MESSAGE);
+                }
+                else{
+
+
+                    
+                    Optional<Kho> checkmaKho = null;
+                    Kho kho=new Kho(maKho,tenKho);
+                    checkmaKho=khoController.get(maKho);
+                  
+                        if(checkUpdate==false)
+                        {
+                            if(khoController.update(kho)==1) {
+                        JOptionPane.showMessageDialog(rootPane, "Bạn đã sửa thành công","Chúc mừng",JOptionPane.PLAIN_MESSAGE);
+                        loadKhoTable();
+                        state="reset";
+                        loadbtn(state);
+                    }
+                    else {
+                       JOptionPane.showMessageDialog(rootPane, "Bạn đã sửa thất bại","Chia buồn",JOptionPane.PLAIN_MESSAGE);
+                     }
+                        }
+                    
+                }   
+                break;
+           
+                
+              
+        }
+    }//GEN-LAST:event_btnLuuActionPerformed
+
+    private void tblKhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhoMouseClicked
+        // TODO add your handling code here:
+                int index = tblKho.getSelectedRow();
+                int valueAt =  (int) tblKho.getValueAt(index, 0);
+                Optional<Kho> pUpdate = khoController.get(valueAt);
+                txtMaKho.setText(pUpdate.get().getMaKho()+"");
+                txtTenKho.setText(pUpdate.get().getTenKho());
+
+    }//GEN-LAST:event_tblKhoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -283,22 +472,139 @@ public class KhoView extends javax.swing.JFrame {
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblKho;
     private javax.swing.JTextField txtMaKho;
-    private javax.swing.JTextField txtMaSP;
     private javax.swing.JTextField txtTenKho;
-    private javax.swing.JTextField txtTenSP;
+    private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
+
+    private void loadKhoTable() {
+        defaultTableModel=new DefaultTableModel();
+        String[] columnTitle = {"Mã Kho", "Tên Kho"};
+        defaultTableModel.setColumnIdentifiers(columnTitle);
+        Object[] dataRow;
+        List<Kho> listKho = khoController.getAll();
+        for (Kho k : listKho) {
+            dataRow = new Object[]{k.getMaKho(), k.getTenKho()};
+            defaultTableModel.addRow(dataRow);
+        }
+        
+        tblKho.setModel(defaultTableModel);
+        tblKho.getColumnModel().getColumn(0).setMaxWidth(100);
+        tblKho.getColumnModel().getColumn(1).setPreferredWidth(50);
+        
+    }
+    private void setColorButton() {
+        btnSua.setBackground(new Color(255,193,7));
+        btnThem.setBackground(new Color(0,0,255));
+        btnLamMoi.setBackground(new Color(0,204,0));
+        btnXoa.setBackground(new Color(238,0,0));
+        btnLuu.setBackground(new Color(253,126,20));
+    }
+    private void loadbtn(String state) {
+        switch(state)
+        {
+            case "reset":
+                txtMaKho.setText("");
+                txtTenKho.setText("");
+                        
+                txtMaKho.setEnabled(false);
+                txtTenKho.setEnabled(false); 
+            
+               
+                
+                btnLuu.setEnabled(false);
+                btnThem.setEnabled(true);
+                btnXoa.setEnabled(true);
+                btnSua.setEnabled(true);
+                break;
+            case "insert":
+                
+                txtMaKho.setEnabled(true);
+                txtTenKho.setEnabled(true);
+             
+                
+                btnLuu.setEnabled(true);
+                btnXoa.setEnabled(false);
+                btnThem.setEnabled(false);
+                btnSua.setEnabled(false);
+                
+      
+                break;
+            case "update":
+                txtMaKho.setEnabled(false);
+                txtTenKho.setEnabled(true);
+             
+                
+                
+                btnLuu.setEnabled(true);
+                btnXoa.setEnabled(false);
+                btnThem.setEnabled(false);
+                btnSua.setEnabled(false);
+                break;
+            case "delete":
+                txtMaKho.setText("");
+                txtTenKho.setText("");
+                   
+                break;
+        }
+    }
+
+    private void setTextChange() {
+        txtTimKiem.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                change();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                change();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                change();
+            }
+            public void change(){
+                String tenKho=txtTimKiem.getText();
+                List<Kho> list;
+                int maKho=0;
+                try {
+                     maKho=Integer.parseInt(txtTimKiem.getText());                     
+                } catch (Exception e) {                   
+                }
+                Kho kho=new Kho(maKho,tenKho);
+                if(tenKho.equals("")){
+                    list=khoController.getAll();
+                }else{
+                    list=khoController.find(kho);
+                }
+                
+                
+                defaultTableModel=new DefaultTableModel();
+                String[] columnTitle = {"Mã Kho", "Tên Kho"};
+                defaultTableModel.setColumnIdentifiers(columnTitle);
+                Object[] dataRow;
+       
+                for (Kho k : list) {
+                    dataRow = new Object[]{k.getMaKho(), k.getTenKho()};
+                    defaultTableModel.addRow(dataRow);
+                }
+
+                tblKho.setModel(defaultTableModel);
+                tblKho.getColumnModel().getColumn(0).setMaxWidth(100);
+                tblKho.getColumnModel().getColumn(1).setPreferredWidth(50);
+            }
+        });
+    }
+
 }

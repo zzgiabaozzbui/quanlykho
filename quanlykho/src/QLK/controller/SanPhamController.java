@@ -60,7 +60,7 @@ public class SanPhamController {
     }
 
   
-    public Optional<SanPham> get(String id) {
+    public SanPham get(String id) {
         SanPham sanPham = new SanPham();
         try {
             String querySelect="SELECT * FROM "+TABLE_NAME+" where masanpham=?";
@@ -70,11 +70,12 @@ public class SanPhamController {
             while (rs.next()) {    
                 sanPham.setMaSanPham(rs.getString(MASP));
                 sanPham.setTenSanPham(rs.getString(TENSP));
-                sanPham.setMoTa(rs.getString(MOTA));     
+                sanPham.setMoTa(rs.getString(MOTA));              
             }
         } catch (Exception e) {
         }
-        return Optional.of(sanPham); 
+        
+        return sanPham; 
     }
 
   

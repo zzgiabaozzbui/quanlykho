@@ -334,10 +334,10 @@ public class SanPhamView extends javax.swing.JFrame {
                 }
                 else{                   
                     SanPham sanPham= new SanPham(maSP,tenSP,moTa);
-                    Optional<SanPham> checkmaSP = null;
+                    SanPham checkmaSP = null;
                     checkmaSP=sanPhamController.get(maSP);
                     
-                    if(checkmaSP.toString()==null){
+                    if(checkmaSP.getTenSanPham()!=null){                     
                         JOptionPane.showMessageDialog(rootPane, "Đã tồn tại sản phẩm này","Cảnh báo",JOptionPane.WARNING_MESSAGE);
                         txtMaSP.requestFocus();
                     }              
@@ -373,7 +373,7 @@ public class SanPhamView extends javax.swing.JFrame {
 
 
                     
-                    Optional<SanPham> checkmaSP = null;
+                    SanPham checkmaSP = null;
                     SanPham sanPham= new SanPham(maSP,tenSP,moTa);
                     checkmaSP=sanPhamController.get(maSP);
                   
@@ -402,10 +402,10 @@ public class SanPhamView extends javax.swing.JFrame {
         // TODO add your handling code here:
                 int index = tblSanPham.getSelectedRow();
                 String valueAt =  (String) tblSanPham.getValueAt(index, 0);
-                Optional<SanPham> pUpdate = sanPhamController.get(valueAt);
-                txtMaSP.setText(pUpdate.get().getMaSanPham());
-                txtTenSP.setText(pUpdate.get().getTenSanPham());
-                txtMoTaSP.setText(pUpdate.get().getMoTa());
+                SanPham pUpdate = sanPhamController.get(valueAt);
+                txtMaSP.setText(pUpdate.getMaSanPham());
+                txtTenSP.setText(pUpdate.getTenSanPham());
+                txtMoTaSP.setText(pUpdate.getMoTa());
     }//GEN-LAST:event_tblSanPhamMouseClicked
 
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
@@ -570,6 +570,7 @@ public class SanPhamView extends javax.swing.JFrame {
             public void change(){
                 String search=txtTimKiem.getText();
                 SanPham sanPham=new SanPham(search,search,"");
+                
                 List<SanPham> list=sanPhamController.find(sanPham);
                 
                 defaultTableModel=new DefaultTableModel();

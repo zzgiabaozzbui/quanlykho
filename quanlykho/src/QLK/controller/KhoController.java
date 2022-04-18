@@ -73,9 +73,10 @@ public class KhoController {
   
     public int insert(Kho t) {
         try {
-            String queryInsert= "Insert into "+TABLE_NAME+" values('',?)";
+            String queryInsert= "Insert into "+TABLE_NAME+" values(?,?)";
             PreparedStatement ps= conn.prepareStatement(queryInsert);
-            ps.setString(1, t.getTenKho());   
+            ps.setString(2, t.getTenKho());
+            ps.setInt(1, t.getMaKho());
             int k=ps.executeUpdate();
             if(k>0)
                 return 1;
@@ -124,8 +125,12 @@ public class KhoController {
    
     public List<Kho> find(Kho t) {
         List<Kho> list = new ArrayList<>();
+        String sql_select="";
         try {
-            String sql_select = "SELECT * FROM "+TABLE_NAME+" where maKho = '"+t.getMaKho()+"' or tenKho like '%"+t.getMaKho()+"%'";
+           
+                sql_select = "SELECT * FROM "+TABLE_NAME+" where maKho = '"+t.getMaKho()+"' or tenKho like '%"+t.getMaKho()+"%'";
+            
+             
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery(sql_select);
             while (rs.next()) {                    

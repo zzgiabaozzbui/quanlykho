@@ -40,11 +40,14 @@ public class Kho {
     public void setTenKho(String tenKho) {
         this.tenKho = tenKho;
     }
+<<<<<<< Updated upstream
 
     @Override
     public String toString() {
         return "Kho{" + "maKho=" + maKho + ", tenKho=" + tenKho + '}';
     }
     
+=======
+>>>>>>> Stashed changes
     
 }

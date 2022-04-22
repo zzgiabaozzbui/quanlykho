@@ -9,10 +9,10 @@ import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import QLK.model.NhaCungCap;
-import qlk.model.NhaCungCapDao;
-import qlk.model.Nhap;
-import qlk.model.NhapDao;
-import qlk.view.ThemPhieuNhap;
+import QLK.controller.NhaCungCapDao;
+import QLK.model.Nhap;
+import QLK.model.NhapDao;
+import QLK.view.ThemPhieuNhap;
 
 /**
  *
@@ -36,13 +36,13 @@ public class ThemPhieuNhapControl {
         model.addColumn("Địa chỉ");
         model.addColumn("Số điện thoại");
         NhaCungCap ncc;
-        for (int i = 0; i < nccdao.getList().size(); i++) {
-            ncc=nccdao.getList().get(i);
+        for (int i = 0; i < nccdao.getAll().size(); i++) {
+            ncc=nccdao.getAll().get(i);
             row=new Vector();
             row.add(ncc.getMaNCC());
             row.add(ncc.getTenNCC());
             row.add(ncc.getDiaChi());
-            row.add(ncc.getSDT());
+            row.add(ncc.getsdtNCC());
             model.addRow(row);
         }
         return model;

@@ -10,7 +10,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import qlk.control.NhapKhoControl;
+import QLK.controller.NhapKhoControl;
 
 /**
  *

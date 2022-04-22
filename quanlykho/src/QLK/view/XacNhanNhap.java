@@ -28,7 +28,7 @@ public class XacNhanNhap extends javax.swing.JPanel {
     /**
      * Creates new form PanelDatDichVu
      */
-    XacNhanNhapControl xnn=new XacNhanNhapControl(this);
+   XacNhanNhapControl xnn=new XacNhanNhapControl(this);
     public XacNhanNhap() {
         initComponents();
         table.setDefaultEditor(Object.class, null);

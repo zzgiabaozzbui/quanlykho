@@ -224,5 +224,29 @@ public class NhaCungCapDao implements Dao<NhaCungCap>{
         
    
     }
+    public String getName(int maNCC) {
+       NhaCungCap ncc=null;
+        try 
+        {
+            String query="Select * from nhacungcap where maNCC=?";
+             PreparedStatement ps = conn.prepareStatement(query);
+             ps.setInt(1, maNCC);
+             ResultSet rs=ps.executeQuery();
+             while(rs.next())
+             {
+                 ncc=new NhaCungCap();
+                 ncc.setMaNCC(rs.getString("maNCC"));
+                 ncc.setTenNCC(rs.getString("tenNCC"));
+                 ncc.setsdtNCC(rs.getString("SDT"));
+                 ncc.setDiaChi(rs.getString("diaChi"));
+             }
+            
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+       return ncc.getTenNCC();
+    }
     
 }

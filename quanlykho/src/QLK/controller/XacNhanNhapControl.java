@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qlk.control;
+package QLK.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import qlk.model.ChiTietNhap;
-import qlk.model.ChiTietNhapDao;
-import qlk.model.NhaCungCapDao;
-import qlk.model.Nhap;
-import qlk.model.NhapDao;
-import qlk.model.ThongTinKho;
-import qlk.model.ThongTinKhoDao;
-import qlk.view.XacNhanNhap;
+import QLK.model.ChiTietNhap;
+import QLK.model.ChiTietNhapDao;
+import QLK.controller.NhaCungCapDao;
+import QLK.model.Nhap;
+import QLK.model.NhapDao;
+import QLK.model.ThongTinKho;
+import QLK.model.ThongTinKhoDao;
+import QLK.view.XacNhanNhap;
 
 /**
  *

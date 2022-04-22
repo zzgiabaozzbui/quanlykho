@@ -8,9 +8,11 @@ package QLK.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import qlk.connect.MyConnection;
 
 /**
  *
@@ -235,4 +237,9 @@ public class NhapDao {
         }
        return list;
     }
+    public static void main(String[] args) {
+        
+        System.out.println(new NhapDao().insert(new Nhap(0,1,1,null,0,0)));
+    }
+    
 }

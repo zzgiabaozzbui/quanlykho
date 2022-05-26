@@ -363,7 +363,9 @@ public class taikhoancontroller {
     }
     public int update(taikhoan t) {
         try {
-            String sql_update = "UPDATE taikhoan SET  matkhau = '"+t.getMatkhau()+"',maNV = '"+t.getMaNV()+"', trangthai  = "+t.getTrangthai()+", quyen  = "+t.getQuyen()+" WHERE taikhoan = '"+t.getTaikhoan()+"' ";
+            String sql_update = "UPDATE taikhoan SET  matkhau = '"+t.getMatkhau()+"',"
+                    + "maNV = '"+t.getMaNV()+"', trangthai  = "+t.getTrangthai()+", "
+                    + "quyen  = "+t.getQuyen()+" WHERE taikhoan = '"+t.getTaikhoan()+"' ";
             System.out.println(sql_update);
             PreparedStatement ps = conn.prepareStatement(sql_update);
             

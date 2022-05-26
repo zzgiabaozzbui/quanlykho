@@ -17,7 +17,7 @@ import QLK.model.Nhap;
 import QLK.model.NhapDao;
 import QLK.model.ThongTinKho;
 import QLK.model.ThongTinKhoDao;
-import QLK.view.XacNhanNhap;
+import qlk.view.XacNhanNhap;
 
 /**
  *

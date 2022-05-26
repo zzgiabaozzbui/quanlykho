@@ -14,7 +14,7 @@ import QLK.model.Nhap;
 import QLK.model.NhapDao;
 import QLK.model.SanPham;
 import QLK.model.SanPhamDao;
-import QLK.view.ThemCTPN;
+import qlk.view.ThemCTPN;
 
 /**
  *

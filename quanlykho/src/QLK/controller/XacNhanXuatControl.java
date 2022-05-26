@@ -17,8 +17,8 @@ import QLK.model.xuat;
 import QLK.model.xuatDao;
 import QLK.view.XacNhanXuat;
 import java.util.Date;
-import qlk.model.ThongTinKho;
-import qlk.model.ThongTinKhoDao;
+import QLK.model.ThongTinKho;
+import QLK.model.ThongTinKhoDao;
 
 /**
  *

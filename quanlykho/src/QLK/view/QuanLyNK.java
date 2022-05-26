@@ -5,12 +5,10 @@
  */
 package qlk.view;
 
+import QLK.controller.NhapKhoControl;
 import java.awt.CardLayout;
 import java.awt.Font;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import QLK.controller.NhapKhoControl;
 
 /**
  *

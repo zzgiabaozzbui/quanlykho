@@ -8,17 +8,10 @@ package QLK.view;
 
 import java.awt.CardLayout;
 import java.awt.Font;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import QLK.controller.TTPhieuNhapControl;
-import QLK.controller.ThemPhieuNhapControl;
 import QLK.model.ChiTietNhap;
-import QLK.model.NhaCungCap;
-import QLK.model.Nhap;
 
 /**
  *

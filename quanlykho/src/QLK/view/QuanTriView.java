@@ -45,6 +45,8 @@ public class QuanTriView extends javax.swing.JFrame {
         tblTK.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         btnS.setEnabled(false);
         btnX.setEnabled(false);
+        
+        btnPQ.setEnabled(false);
         cboQ.setEnabled(false);
         
         setExtendedState(MAXIMIZED_BOTH);
@@ -59,6 +61,7 @@ public class QuanTriView extends javax.swing.JFrame {
                 btnT.setEnabled(false);
                 btnS.setEnabled(true);
                 btnX.setEnabled(true);
+                btnPQ.setEnabled(true);
                 int index = tblTK.getSelectedRow();
                 String valueAt = (String) tblTK.getValueAt(index, 1);
                 taikhoancontroller usd  = new taikhoancontroller();
@@ -225,7 +228,7 @@ public class QuanTriView extends javax.swing.JFrame {
         btnX = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnExcel = new javax.swing.JButton();
-        btnBieuDo = new javax.swing.JButton();
+        btnPQ = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
         lblerro = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
@@ -537,14 +540,14 @@ public class QuanTriView extends javax.swing.JFrame {
             }
         });
 
-        btnBieuDo.setBackground(new java.awt.Color(255, 255, 255));
-        btnBieuDo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBieuDo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/chart_35.png"))); // NOI18N
-        btnBieuDo.setText("Phân quyền");
-        btnBieuDo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnBieuDo.addActionListener(new java.awt.event.ActionListener() {
+        btnPQ.setBackground(new java.awt.Color(255, 255, 255));
+        btnPQ.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPQ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/chart_35.png"))); // NOI18N
+        btnPQ.setText("Phân quyền");
+        btnPQ.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBieuDoActionPerformed(evt);
+                btnPQActionPerformed(evt);
             }
         });
 
@@ -579,7 +582,7 @@ public class QuanTriView extends javax.swing.JFrame {
                 .addGap(71, 71, 71)
                 .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPQ, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -593,7 +596,7 @@ public class QuanTriView extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPQ, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -737,6 +740,7 @@ public class QuanTriView extends javax.swing.JFrame {
         txtTK.setEnabled(true);
         btnS.setEnabled(false);
         btnX.setEnabled(false);
+        btnPQ.setEnabled(false);
         cboQ.setEnabled(false);
     }
     private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
@@ -748,10 +752,10 @@ public class QuanTriView extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnExcelActionPerformed
 
-    private void btnBieuDoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBieuDoActionPerformed
+    private void btnPQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPQActionPerformed
         
         cboQ.setEnabled(true);
-    }//GEN-LAST:event_btnBieuDoActionPerformed
+    }//GEN-LAST:event_btnPQActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
         this.dispose();
@@ -956,8 +960,8 @@ public class QuanTriView extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBieuDo;
     private javax.swing.JButton btnExcel;
+    private javax.swing.JButton btnPQ;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnS;
     private javax.swing.JButton btnSearch;

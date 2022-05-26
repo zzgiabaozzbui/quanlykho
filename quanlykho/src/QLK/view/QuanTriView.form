@@ -605,7 +605,7 @@
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Component id="btnExcel" min="-2" pref="161" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="btnBieuDo" min="-2" pref="163" max="-2" attributes="0"/>
+                      <Component id="btnPQ" min="-2" pref="163" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="btnexit" min="-2" pref="135" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -622,7 +622,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnBieuDo" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="btnPQ" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="btnExcel" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="btnReset" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="btnX" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
@@ -751,7 +751,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcelActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnBieuDo">
+            <Component class="javax.swing.JButton" name="btnPQ">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -770,7 +770,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBieuDoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPQActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnexit">

@@ -6,7 +6,6 @@
 package QLK.controller;
 
 import QLK.model.SanPhamDao;
-import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import QLK.model.chiTietXuat;
@@ -14,6 +13,7 @@ import QLK.model.chiTietXuatDao;
 import QLK.model.xuat;
 import QLK.model.xuatDao;
 import QLK.view.TTPhieuXuat;
+import java.util.Vector;
 /**
  *
  * @author ADMIN

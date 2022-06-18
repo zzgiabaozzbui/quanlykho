@@ -14,12 +14,12 @@ import java.sql.Timestamp;
 public class Nhap {
     private int maNhap;
     private int maNCC;
-    private int maNV;
+    private String maNV;
     private Timestamp thoiGian;
     private float thanhTien;
     private int trangThai;
 
-    public Nhap(int maNhap, int maNCC, int maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
+    public Nhap(int maNhap, int maNCC, String maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
         this.maNhap = maNhap;
         this.maNCC = maNCC;
         this.maNV = maNV;
@@ -47,11 +47,11 @@ public class Nhap {
         this.maNCC = maNCC;
     }
 
-    public int getMaNV() {
+    public String getMaNV() {
         return maNV;
     }
 
-    public void setMaNV(int maNV) {
+    public void setMaNV(String maNV) {
         this.maNV = maNV;
     }
 

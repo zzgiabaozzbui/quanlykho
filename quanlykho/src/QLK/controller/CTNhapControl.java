@@ -44,7 +44,7 @@ public class CTNhapControl {
         }
         return x;
     }
-    public TableModel getModelTable(String maNV)
+    public TableModel getModelTable()
     {   DefaultTableModel model=null;
         try {
             
@@ -66,7 +66,7 @@ public class CTNhapControl {
         }
     
         } catch (Exception e) {
-            System.out.println("ERR4"+e.toString());
+            e.printStackTrace();
         }
          return model;
     }

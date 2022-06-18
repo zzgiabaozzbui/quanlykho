@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import QLK.model.ChiTietNhap;
 import QLK.model.ChiTietNhapDao;
-import QLK.controller.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
 import QLK.model.ThongTinKho;
@@ -30,11 +29,12 @@ public class XacNhanNhapControl {
     NhaCungCapDao nccd=new NhaCungCapDao();
     ChiTietNhapDao ctndao=new ChiTietNhapDao();
     ThongTinKhoDao ttkdao=new ThongTinKhoDao();
+    
     public XacNhanNhapControl(XacNhanNhap xnn) {
         this.xnn = xnn;
     }
     
-    public TableModel getData(int maNV)
+    public TableModel getData(String maNV)
     {
         Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
@@ -63,7 +63,8 @@ public class XacNhanNhapControl {
         }
         return model;
     }
-    public void xacNhan(Nhap nhap,int maNV)
+    
+    public void xacNhan(Nhap nhap,String maNV)
     {
         int maKho=getMaKho(maNV);
         nd.update(nhap);
@@ -84,7 +85,7 @@ public class XacNhanNhapControl {
         }
     }
 
-    private int getMaKho(int maNV) {
+    private int getMaKho(String maNV) {
         return 1;
     }
     

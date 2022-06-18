@@ -32,7 +32,7 @@ public class NhapKhoControl {
     }
     
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-    public TableModel getModelTable(int maNV)
+    public TableModel getModelTable(String maNV)
     {
         Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
@@ -73,7 +73,7 @@ public class NhapKhoControl {
         
     }
 
-    public DefaultTableModel getModelBy(int  x,int maNV) {
+    public DefaultTableModel getModelBy(int  x,String maNV) {
          Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
         model.addColumn("Mã nhập kho");

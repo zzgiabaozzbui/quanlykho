@@ -36,17 +36,12 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
     
     public void next(int key)
     {
-         try {
-                this.removeAll();
-                this.setLayout(new CardLayout());
-                ThemCTPN themCT=new ThemCTPN(key);
-                this.add(themCT);
-                this.validate();
-                this.repaint();
-        } catch (Exception e) {
-             System.out.println("ERR2"+e.toString());
-        }
-       
+          this.removeAll();
+          this.setLayout(new CardLayout());
+          ThemCTPN themCT=new ThemCTPN(key);
+          this.add(themCT);
+          this.validate();
+          this.repaint();
     }
 
     /**
@@ -161,12 +156,14 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
             {
                 Nhap nhap=new Nhap();
                 nhap.setMaNCC(Integer.parseInt(value));
-                nhap.setMaNV(1);
+                
+                nhap.setMaNV("NV01");
+                
                 nc.add(nhap);
             }
         } catch (Exception e) {
             System.out.println(e.toString());
-            JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");
+            JOptionPane.showMessageDialog(null," Bạn phải chọn nhà cung cấp trước !");
         }
         
         

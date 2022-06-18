@@ -32,10 +32,10 @@ public class ThemCTPN extends javax.swing.JPanel {
         initComponents();
         jTable1.setDefaultEditor(Object.class, null);
         jTable1.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        jTable1.setModel(ctncontrol.getModelTable("NV01"));
+        jTable1.setModel(ctncontrol.getModelTable());
             
         } catch (Exception e) {
-            System.out.println("6");
+            
             e.printStackTrace();
         }
        
@@ -256,6 +256,7 @@ public class ThemCTPN extends javax.swing.JPanel {
                     nhap.setSoLuong((int) spinSL1.getValue());
                 int giaNhap= (int) spinSL.getValue();
                 nhap.setGiaNhap(giaNhap*1000);
+               
                 int result=ctncontrol.add(nhap);
                 if(result==1)
                 {

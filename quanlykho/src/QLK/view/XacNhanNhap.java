@@ -28,7 +28,7 @@ public class XacNhanNhap extends javax.swing.JPanel {
         xnn=new XacNhanNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        table.setModel(xnn.getData(1));
+        table.setModel(xnn.getData("NV01"));
     }
     public void next()
     {
@@ -157,10 +157,10 @@ public class XacNhanNhap extends javax.swing.JPanel {
                 nhap.setThanhTien(0);
                 nhap.setTrangThai(1);
                 nhap.setMaNCC(maNCC);
-                xnn.xacNhan(nhap,1);
+                xnn.xacNhan(nhap,"NV01");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");
+            JOptionPane.showMessageDialog(null," Bạn phải chọn phiếu nhập trước !");
         }
         
         

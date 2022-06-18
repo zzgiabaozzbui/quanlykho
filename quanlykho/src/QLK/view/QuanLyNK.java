@@ -22,12 +22,13 @@ public class QuanLyNK extends javax.swing.JPanel {
      * Creates new form QuanLyNK
      */
     NhapKhoControl nkc;
+    String maNV="NV01";
     public QuanLyNK() {
         initComponents();
         nkc=new NhapKhoControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        table.setModel(nkc.getModelTable(1));
+        table.setModel(nkc.getModelTable(maNV));
         
     }
    
@@ -295,23 +296,23 @@ public class QuanLyNK extends javax.swing.JPanel {
     }//GEN-LAST:event_btnChiTietActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-              table.setModel(nkc.getModelBy(4, 1));
+              table.setModel(nkc.getModelBy(4,maNV));
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        table.setModel(nkc.getModelTable(1));
+        table.setModel(nkc.getModelTable(maNV));
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
-        table.setModel(nkc.getModelBy(1, 1));
+        table.setModel(nkc.getModelBy(1, maNV));
     }//GEN-LAST:event_btnSearch1ActionPerformed
 
     private void btnSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch2ActionPerformed
-        table.setModel(nkc.getModelBy(3, 1));
+        table.setModel(nkc.getModelBy(3, maNV));
     }//GEN-LAST:event_btnSearch2ActionPerformed
 
     private void btnSearch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch3ActionPerformed
-        table.setModel(nkc.getModelBy(2, 1));
+        table.setModel(nkc.getModelBy(2, maNV));
     }//GEN-LAST:event_btnSearch3ActionPerformed
 
 

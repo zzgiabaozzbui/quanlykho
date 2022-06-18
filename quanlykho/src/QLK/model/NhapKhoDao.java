@@ -21,21 +21,22 @@ import QLK.model.Nhap;
  */
 public class NhapKhoDao {
     Connection conn=MyConnection.getInstance().getConnection();
-    public List<Nhap> getList(int maNV) {
+    public List<Nhap> getList(String maNV) {
        List list=new ArrayList<>();
        Nhap nhap=null;
         try 
         {
             String query="Select * from nhap where maNV=?";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
              ResultSet rs=ps.executeQuery();
+             System.out.println(query);
              while(rs.next())
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
                  nhap.setMaNCC(rs.getInt("maNCC"));
-                 nhap.setMaNV(rs.getInt("maNV"));
+                 nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));
                  nhap.setTrangThai(rs.getInt("trangThai"));
@@ -49,21 +50,22 @@ public class NhapKhoDao {
         }
        return list;
     }
-    public List<Nhap> getListNot(int maNV) {
+    public List<Nhap> getListNot(String maNV) {
        List list=new ArrayList<>();
        Nhap nhap=null;
         try 
         {
             String query="Select * from nhap where maNV=? and trangThai=0";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
+             System.out.println(query);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
                  nhap.setMaNCC(rs.getInt("maNCC"));
-                 nhap.setMaNV(rs.getInt("maNV"));
+                 nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));
                  nhap.setTrangThai(rs.getInt("trangThai"));
@@ -87,7 +89,7 @@ public class NhapKhoDao {
              PreparedStatement ps = conn.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS);
              
              ps.setInt(1, nhap.getMaNCC());
-             ps.setInt(2, nhap.getMaNV());
+             ps.setString(2, nhap.getMaNV());
              int k=ps.executeUpdate();
              ResultSet rs = ps.getGeneratedKeys();
              if (rs.next())
@@ -192,7 +194,7 @@ public class NhapKhoDao {
         }
         return 0;
     }
-    public List<Nhap> getListBy(int x,int maNV) {
+    public List<Nhap> getListBy(int x,String maNV) {
        List list=new ArrayList<>();
        Nhap nhap=null;
         try 
@@ -217,14 +219,14 @@ public class NhapKhoDao {
                     
             String query="Select * from nhap where maNV=? "+by;
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
                  nhap.setMaNCC(rs.getInt("maNCC"));
-                 nhap.setMaNV(rs.getInt("maNV"));
+                 nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));
                  nhap.setTrangThai(rs.getInt("trangThai"));

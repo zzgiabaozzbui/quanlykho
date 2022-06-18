@@ -14,7 +14,7 @@ import QLK.model.ChiTietNhap;
 import QLK.model.ChiTietNhapDao;
 import QLK.controller.NhaCungCapDao;
 import QLK.model.Nhap;
-import QLK.model.NhapDao;
+import QLK.model.NhapKhoDao;
 import QLK.model.ThongTinKho;
 import QLK.model.ThongTinKhoDao;
 import qlk.view.XacNhanNhap;
@@ -25,7 +25,7 @@ import qlk.view.XacNhanNhap;
  */
 public class XacNhanNhapControl {
     XacNhanNhap xnn;
-    NhapDao nd=new NhapDao();
+    NhapKhoDao nd=new NhapKhoDao();
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     NhaCungCapDao nccd=new NhaCungCapDao();
     ChiTietNhapDao ctndao=new ChiTietNhapDao();

@@ -11,7 +11,7 @@ import javax.swing.table.TableModel;
 import QLK.model.ChiTietNhap;
 import QLK.model.ChiTietNhapDao;
 import QLK.model.Nhap;
-import QLK.model.NhapDao;
+import QLK.model.NhapKhoDao;
 import QLK.model.SanPham;
 import QLK.model.SanPhamDao;
 import qlk.view.ThemCTPN;
@@ -23,7 +23,7 @@ import qlk.view.ThemCTPN;
 public class CTNhapControl {
     ThemCTPN them;
     ChiTietNhapDao ctnd=new ChiTietNhapDao();
-    NhapDao nd=new NhapDao();
+    NhapKhoDao nd=new NhapKhoDao();
     SanPhamDao spd=new SanPhamDao();
     public CTNhapControl(ThemCTPN them) {
        this.them=them;

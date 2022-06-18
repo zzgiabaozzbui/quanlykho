@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import QLK.model.NhaCungCap;
 import QLK.controller.NhaCungCapDao;
 import QLK.model.Nhap;
-import QLK.model.NhapDao;
+import QLK.model.NhapKhoDao;
 import qlk.view.ThemPhieuNhap;
 
 /**
@@ -20,7 +20,7 @@ import qlk.view.ThemPhieuNhap;
  */
 public class ThemPhieuNhapControl {
     ThemPhieuNhap them;
-    NhapDao nhapdao=new NhapDao();
+    NhapKhoDao nhapdao=new NhapKhoDao();
     NhaCungCapDao nccdao=new NhaCungCapDao();
     
 

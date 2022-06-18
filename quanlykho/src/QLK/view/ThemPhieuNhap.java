@@ -24,9 +24,10 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
     /**
      * Creates new form PanelDatDichVu
      */
-    ThemPhieuNhapControl nc=new ThemPhieuNhapControl(this);
+    ThemPhieuNhapControl nc;
     public ThemPhieuNhap() {
         initComponents();
+        nc=new ThemPhieuNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         table.setModel(nc.getDataNCC());

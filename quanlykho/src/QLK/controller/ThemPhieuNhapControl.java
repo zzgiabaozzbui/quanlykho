@@ -12,7 +12,7 @@ import QLK.model.NhaCungCap;
 import QLK.controller.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
-import qlk.view.ThemPhieuNhap;
+import QLK.view.ThemPhieuNhap;
 
 /**
  *

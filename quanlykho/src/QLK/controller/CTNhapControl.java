@@ -25,9 +25,11 @@ public class CTNhapControl {
     ChiTietNhapDao ctnd=new ChiTietNhapDao();
     NhapKhoDao nd=new NhapKhoDao();
     SanPhamDao spd=new SanPhamDao();
+    
     public CTNhapControl(ThemCTPN them) {
        this.them=them;
     }
+    
     public int add(ChiTietNhap nhap)
     {
         int x=ctnd.insert(nhap);

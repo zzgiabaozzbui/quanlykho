@@ -8,13 +8,9 @@ package QLK.view;
 
 import java.awt.CardLayout;
 import java.awt.Font;
-
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import QLK.controller.XacNhanNhapControl;
-
 import QLK.model.Nhap;
 
 /**
@@ -26,9 +22,10 @@ public class XacNhanNhap extends javax.swing.JPanel {
     /**
      * Creates new form PanelDatDichVu
      */
-    XacNhanNhapControl xnn=new XacNhanNhapControl(this);
+    XacNhanNhapControl xnn;
     public XacNhanNhap() {
         initComponents();
+        xnn=new XacNhanNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         table.setModel(xnn.getData(1));

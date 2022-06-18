@@ -21,9 +21,10 @@ public class QuanLyNK extends javax.swing.JPanel {
     /**
      * Creates new form QuanLyNK
      */
-    NhapKhoControl nkc=new NhapKhoControl(this);
+    NhapKhoControl nkc;
     public QuanLyNK() {
         initComponents();
+        nkc=new NhapKhoControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         table.setModel(nkc.getModelTable(1));

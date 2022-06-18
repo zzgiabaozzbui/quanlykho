@@ -44,10 +44,13 @@ public class CTNhapControl {
         }
         return x;
     }
-    public TableModel getModelTable(int maNV)
-    {
+    public TableModel getModelTable(String maNV)
+    {   DefaultTableModel model=null;
+        try {
+            
+    
         Vector row = null;
-        DefaultTableModel model=new DefaultTableModel();
+         model=new DefaultTableModel();
         model.addColumn("Mã sản phẩm ");
         model.addColumn("Tên sản phẩm");
         model.addColumn("Mô tả");
@@ -61,7 +64,11 @@ public class CTNhapControl {
             row.add(sp.getMoTa());
             model.addRow(row);
         }
-        return model;
+    
+        } catch (Exception e) {
+            System.out.println("ERR4"+e.toString());
+        }
+         return model;
     }
     
 }

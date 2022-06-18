@@ -26,20 +26,27 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
      */
     ThemPhieuNhapControl nc;
     public ThemPhieuNhap() {
+      
         initComponents();
         nc=new ThemPhieuNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         table.setModel(nc.getDataNCC());
     }
+    
     public void next(int key)
     {
-        this.removeAll();
-        this.setLayout(new CardLayout());
-       JPanel themCT=new ThemCTPN(key);
-        this.add(themCT);
-        this.validate();
-        this.repaint();
+         try {
+                this.removeAll();
+                this.setLayout(new CardLayout());
+                ThemCTPN themCT=new ThemCTPN(key);
+                this.add(themCT);
+                this.validate();
+                this.repaint();
+        } catch (Exception e) {
+             System.out.println("ERR2"+e.toString());
+        }
+       
     }
 
     /**
@@ -158,6 +165,7 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
                 nc.add(nhap);
             }
         } catch (Exception e) {
+            System.out.println(e.toString());
             JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");
         }
         

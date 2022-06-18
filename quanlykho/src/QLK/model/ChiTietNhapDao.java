@@ -34,7 +34,7 @@ public class ChiTietNhapDao {
                  nhap=new ChiTietNhap();
                  nhap.setMaCTNhap(rs.getInt("maCTNhap"));
                  nhap.setMaNhap(rs.getInt("maNhap"));
-                 nhap.setMaSanPham(rs.getInt("maSanPham"));
+                 nhap.setMaSanPham(rs.getString("maSanPham"));
                  nhap.setSoLuong(rs.getInt("soLuong"));
                  nhap.setGiaNhap(rs.getFloat("giaNhap"));
                  list.add(nhap);
@@ -55,7 +55,7 @@ public class ChiTietNhapDao {
              PreparedStatement ps = conn.prepareStatement(query);
           
              ps.setInt(1, nhap.getMaNhap());
-             ps.setInt(2, nhap.getMaSanPham());
+             ps.setString(2, nhap.getMaSanPham());
              ps.setInt(3, nhap.getSoLuong());
              ps.setFloat(4, nhap.getGiaNhap());
           
@@ -88,7 +88,7 @@ public class ChiTietNhapDao {
              PreparedStatement ps = conn.prepareStatement(query);
     
             
-             ps.setInt(1, t.getMaSanPham());
+             ps.setString(1, t.getMaSanPham());
              ps.setInt(2, t.getSoLuong());
              ps.setFloat(3, t.getGiaNhap());
              ps.setInt(4, t.getMaCTNhap());

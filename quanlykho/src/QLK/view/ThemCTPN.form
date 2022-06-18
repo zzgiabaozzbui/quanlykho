@@ -194,7 +194,7 @@
                       <Font name="Times New Roman" size="18" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/QLKS/Image/baseline_clear_black_24dp.png"/>
+                      <Image iconType="3" name="/QLK/img/baseline_clear_black_24dp.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="K&#x1ebf;t th&#xfa;c"/>
                   </Properties>

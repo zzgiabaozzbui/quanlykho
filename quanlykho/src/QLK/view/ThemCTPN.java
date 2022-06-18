@@ -26,12 +26,19 @@ public class ThemCTPN extends javax.swing.JPanel {
     int count=0;
     
     public ThemCTPN(int x) {
+        try {
         ctncontrol=new CTNhapControl(this);
         maNhap=x;
         initComponents();
         jTable1.setDefaultEditor(Object.class, null);
         jTable1.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        jTable1.setModel(ctncontrol.getModelTable(1));
+        jTable1.setModel(ctncontrol.getModelTable("NV01"));
+            
+        } catch (Exception e) {
+            System.out.println("6");
+            e.printStackTrace();
+        }
+       
     }
 
     /**
@@ -91,7 +98,7 @@ public class ThemCTPN extends javax.swing.JPanel {
 
         btnBack.setBackground(new java.awt.Color(255, 0, 0));
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Image/baseline_clear_black_24dp.png"))); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLK/img/baseline_clear_black_24dp.png"))); // NOI18N
         btnBack.setText("Kết thúc");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,7 +245,7 @@ public class ThemCTPN extends javax.swing.JPanel {
             {
                
                 ChiTietNhap nhap=new ChiTietNhap();
-                nhap.setMaSanPham(Integer.parseInt(value));
+                nhap.setMaSanPham(value);
                 nhap.setMaNhap(maNhap);
                 if((int) spinSL1.getValue()<=0||(int) spinSL.getValue()<=0)
                 {

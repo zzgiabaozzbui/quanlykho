@@ -24,9 +24,13 @@ public class ThemPhieuNhapControl {
     NhaCungCapDao nccdao=new NhaCungCapDao();
     
 
-    public ThemPhieuNhapControl(ThemPhieuNhap them) {
-         this.them = them;
+    public ThemPhieuNhapControl(ThemPhieuNhap themPN) {
+        System.out.println("HERE");
+         
+         this.them = themPN;
+          System.out.println("THEM:"+them.getName());
     }
+    
     public DefaultTableModel getDataNCC()
     {
          Vector row = null;
@@ -49,8 +53,14 @@ public class ThemPhieuNhapControl {
     }
     public void add(Nhap nhap)
     {
-        int key=nhapdao.insert(nhap);
-        them.next(key);
+        try {
+            int key=nhapdao.insert(nhap);
+            System.out.println("KEY:"+key);
+            System.out.println("THEM:"+them.getName());
+            them.next(key);
+        } catch (Exception e) {
+            System.out.println("ERR"+e.toString());
+        }
     }
     
 }

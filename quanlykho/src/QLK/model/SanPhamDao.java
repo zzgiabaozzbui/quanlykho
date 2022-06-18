@@ -20,6 +20,7 @@ import QLK.connect.MyConnection;
 public class SanPhamDao {
     Connection conn=MyConnection.getInstance().getConnection();
     public List<SanPham> getList() {
+        
        List list=new ArrayList<>();
        SanPham sp=null;
         try 
@@ -39,17 +40,17 @@ public class SanPhamDao {
         }
         catch (Exception e) 
         {
-            e.printStackTrace();
+            System.out.println("ERR5"+e.toString());
         }
        return list;
     }
-     public String getName(int maSP) {
+     public String getName(String maSP) {
        SanPham sp=null;
         try 
         {
             String query="Select * from sanpham where maSanPham=?";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1, maSP);
+             ps.setString(1, maSP);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {

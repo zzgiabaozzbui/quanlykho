@@ -12,7 +12,7 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import QLK.model.ChiTietNhapDao;
-import QLK.controller.NhaCungCapDao;
+import QLK.model.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
 import QLK.view.QuanLyNK;

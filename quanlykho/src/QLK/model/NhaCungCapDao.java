@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import qlk.connect.MyConnection;
+import QLK.connect.MyConnection;
 
 /**
  *
@@ -29,9 +29,9 @@ public class NhaCungCapDao {
              while(rs.next())
              {
                  ncc=new NhaCungCap();
-                 ncc.setMaNCC(rs.getInt("maNCC"));
+                 ncc.setMaNCC(rs.getString("maNCC"));
                  ncc.setTenNCC(rs.getString("tenNCC"));
-                 ncc.setSDT(rs.getString("SDT"));
+                 ncc.setsdtNCC(rs.getString("SDT"));
                  ncc.setDiaChi(rs.getString("diaChi"));
  
                  list.add(ncc);
@@ -55,9 +55,9 @@ public class NhaCungCapDao {
              while(rs.next())
              {
                  ncc=new NhaCungCap();
-                 ncc.setMaNCC(rs.getInt("maNCC"));
+                 ncc.setMaNCC(rs.getString("maNCC"));
                  ncc.setTenNCC(rs.getString("tenNCC"));
-                 ncc.setSDT(rs.getString("SDT"));
+                 ncc.setsdtNCC(rs.getString("SDT"));
                  ncc.setDiaChi(rs.getString("diaChi"));
              }
             

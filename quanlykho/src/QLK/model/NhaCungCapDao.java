@@ -31,7 +31,7 @@ public class NhaCungCapDao {
                  ncc=new NhaCungCap();
                  ncc.setMaNCC(rs.getString("maNCC"));
                  ncc.setTenNCC(rs.getString("tenNCC"));
-                 ncc.setsdtNCC(rs.getString("SDT"));
+                 ncc.setsdtNCC(rs.getString("sdtNCC"));
                  ncc.setDiaChi(rs.getString("diaChi"));
  
                  list.add(ncc);
@@ -57,7 +57,7 @@ public class NhaCungCapDao {
                  ncc=new NhaCungCap();
                  ncc.setMaNCC(rs.getString("maNCC"));
                  ncc.setTenNCC(rs.getString("tenNCC"));
-                 ncc.setsdtNCC(rs.getString("SDT"));
+                 ncc.setsdtNCC(rs.getString("sdtNCC"));
                  ncc.setDiaChi(rs.getString("diaChi"));
              }
             

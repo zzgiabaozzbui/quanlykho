@@ -4,26 +4,34 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/XacNhanNhap.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/khachHangDao.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ThongTinKhoDao.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/NhaCungCap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/SanPhamDao.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/CTNhapControl.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemCTPN.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/Nhap.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/NhaCungCapDao.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemPhieuNhap.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/NhapKhoControl.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/NhanVienDao.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ChiTietNhap.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ThongTinKho.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/NhapKhoDao.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/KhachHang.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/QuanLyNK.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/XacNhanNhapControl.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/ThemPhieuNhapControl.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/TTPhieuNhap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemPhieuXuat.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/khachHangDao.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/CTXuatControl.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ThongTinKhoDao.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/NhaCungCap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemCTPN.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/NhaCungCapDao.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/Nhap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemPhieuNhap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/NhapKhoControl.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ThongTinKho.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/KhachHangDao.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/ChiTietNhapDao.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/TTPhieuNhap.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/Login/login.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/controller/TTPhieuNhapControl.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/NhapDao.java</file>
-            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemPhieuXuat.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/QLKHome.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/util/PropertiesNVNow.java</file>
+            <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/Login/Home.java</file>
         </group>
     </open-files>
 </project-private>

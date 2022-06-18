@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qlk.view;
+package QLK.view;
 
 
 import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import qlk.control.TTPhieuNhapControl;
-import qlk.model.ChiTietNhap;
+import QLK.controller.TTPhieuNhapControl;
+import QLK.model.ChiTietNhap;
 
 /**
  *

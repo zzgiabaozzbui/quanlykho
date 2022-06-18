@@ -16,6 +16,7 @@ import QLK.model.SanPham;
 import QLK.model.SanPhamDao;
 import QLK.view.TTPhieuNhap;
 
+
 /**
  *
  * @author ADMIN
@@ -25,6 +26,7 @@ public class TTPhieuNhapControl {
     ChiTietNhapDao ctnd=new ChiTietNhapDao();
     NhapKhoDao nhapDao=new NhapKhoDao();
     SanPhamDao spd=new SanPhamDao();
+    
     public TTPhieuNhapControl(TTPhieuNhap ttpn) {
         this.ttpn = ttpn;
     }

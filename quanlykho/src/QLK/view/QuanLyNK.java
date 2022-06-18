@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qlk.view;
+package QLK.view;
 
 import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import qlk.control.NhapKhoControl;
+import QLK.controller.NhapKhoControl;
 
 /**
  *

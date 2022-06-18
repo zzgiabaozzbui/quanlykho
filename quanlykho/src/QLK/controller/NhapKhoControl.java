@@ -15,7 +15,7 @@ import QLK.model.ChiTietNhapDao;
 import QLK.controller.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
-import qlk.view.QuanLyNK;
+import QLK.view.QuanLyNK;
 
 /**
  *

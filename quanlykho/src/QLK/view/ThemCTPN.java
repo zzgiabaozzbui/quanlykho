@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qlk.view;
+package QLK.view;
 
 
 import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.JOptionPane;
-import qlk.control.CTNhapControl;
-import qlk.model.ChiTietNhap;
+import QLK.controller.CTNhapControl;
+import QLK.model.ChiTietNhap;
 
 /**
  *
@@ -21,16 +21,17 @@ public class ThemCTPN extends javax.swing.JPanel {
     /**
      * Creates new form PanelDatDichVu
      */
-    CTNhapControl ctncontrol=new CTNhapControl(this);
+    CTNhapControl ctncontrol;
     int maNhap=0;
     int count=0;
+    
     public ThemCTPN(int x) {
+        ctncontrol=new CTNhapControl(this);
         maNhap=x;
         initComponents();
         jTable1.setDefaultEditor(Object.class, null);
         jTable1.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         jTable1.setModel(ctncontrol.getModelTable(1));
-        
     }
 
     /**

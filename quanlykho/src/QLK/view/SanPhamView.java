@@ -390,15 +390,16 @@ public class SanPhamView extends javax.swing.JFrame {
                 break;
 
             case "update":
-                boolean checkUpdate=false;                 
-                maSP= txtMaSP.getText().trim();
-                tenSP= txtTenSP.getText().trim();
-                moTa=txtMoTaSP.getText().trim();
+                boolean checkUpdate=false;       
+             
+                    maSP= txtMaSP.getText().trim();
+                    tenSP= txtTenSP.getText().trim();
+                    moTa=txtMoTaSP.getText().trim();
                 
                 
                 if(maSP.length()==0)
                 {        
-                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mã sản phẩm","Cảnh báo",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(rootPane, "Vui lòng click vào bảng để cập nhật","Cảnh báo",JOptionPane.WARNING_MESSAGE);
                 }
                 else{
 
@@ -422,6 +423,10 @@ public class SanPhamView extends javax.swing.JFrame {
                         }
                     
                 }   
+                
+                    
+                
+                
                 break;
            
                 

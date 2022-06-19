@@ -245,9 +245,9 @@
                       <Component id="btnXoa" min="-2" pref="134" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
                       <Component id="btnReset" min="-2" pref="147" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="btnexit" min="-2" pref="135" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>

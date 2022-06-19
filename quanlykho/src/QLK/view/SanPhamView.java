@@ -5,6 +5,7 @@
  */
 package QLK.view;
 
+import QLK.Login.Home;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -70,6 +71,7 @@ public class SanPhamView extends javax.swing.JFrame {
         btnLamMoi = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        btnThoat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -200,6 +202,14 @@ public class SanPhamView extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("TÌM KIẾM:");
 
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Quay lại");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -231,7 +241,9 @@ public class SanPhamView extends javax.swing.JFrame {
                 .addComponent(btnLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(233, 233, 233))
+                .addGap(36, 36, 36)
+                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +268,8 @@ public class SanPhamView extends javax.swing.JFrame {
                             .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -430,6 +443,12 @@ public class SanPhamView extends javax.swing.JFrame {
         System.out.println(txtTimKiem.getText());
     }//GEN-LAST:event_txtTimKiemActionPerformed
 
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Home().setVisible(true);
+    }//GEN-LAST:event_btnThoatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -473,6 +492,7 @@ public class SanPhamView extends javax.swing.JFrame {
     private javax.swing.JButton btnLuu;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
@@ -567,6 +587,7 @@ public class SanPhamView extends javax.swing.JFrame {
         btnLamMoi.setBackground(new Color(0,204,0));
         btnXoa.setBackground(new Color(238,0,0));
         btnLuu.setBackground(new Color(253,126,20));
+        btnThoat.setBackground(new Color(204,102,255));
     }
 
     private void setTextChange() {

@@ -526,7 +526,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="            Qua&#x309;n ly&#x301; nh&#x1ead;p"/>
+                    <Property name="text" type="java.lang.String" value="            Qua&#x309;n ly&#x301; kho"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[150, 28]"/>
                     </Property>
@@ -691,14 +691,14 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnQLPT" alignment="0" pref="322" max="32767" attributes="0"/>
+                      <Component id="btnTKX" alignment="0" pref="322" max="32767" attributes="0"/>
                       <Component id="btnQLSP" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnQLPT" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="btnTKX" min="-2" pref="42" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="btnQLSP" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
@@ -706,7 +706,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="btnQLPT">
+                <Component class="javax.swing.JLabel" name="btnTKX">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -717,7 +717,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="            Qua&#x309;n ly&#x301; phu&#x323; thu"/>
+                    <Property name="text" type="java.lang.String" value="            Th&#x1ed1;ng k&#xea; nh&#x1ead;p"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[150, 28]"/>
                     </Property>
@@ -729,7 +729,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQLPTMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnTKXMouseClicked"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="btnQLSP">
@@ -743,7 +743,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="            Qua&#x309;n ly&#x301; sa&#x309;n ph&#xe2;&#x309;m"/>
+                    <Property name="text" type="java.lang.String" value="            Th&#x1ed1;ng k&#xea; xu&#x1ea5;t"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[150, 28]"/>
                     </Property>

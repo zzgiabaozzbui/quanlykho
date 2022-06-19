@@ -8,6 +8,7 @@ package QLK.Login;
 import QLK.controller.taikhoancontroller;
 import QLK.util.PropertiesNVNow;
 import QLK.view.BieuDoNhapSP;
+import QLK.view.BieuDoXuatSP;
 import QLK.view.KhachHangView;
 import QLK.view.KhoView;
 import QLK.view.NhaCungCapView;
@@ -592,9 +593,12 @@ public class Home extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQLSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLSPMouseClicked
-        HideMenu();
-        //        h.dispose();
-        //        new frSanPham().setVisible(true);
+        pnHome.removeAll();
+        pnHome.setLayout(new CardLayout());
+        BieuDoXuatSP bieudo=new BieuDoXuatSP();
+        pnHome.add(bieudo);
+        pnHome.validate();
+        pnHome.repaint();
     }//GEN-LAST:event_btnQLSPMouseClicked
 
     private void btnTKXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKXMouseClicked

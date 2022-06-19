@@ -276,6 +276,7 @@ public class QuanLyNK extends javax.swing.JPanel {
                 nkc.delete(Integer.parseInt(value));
             }
         } catch (Exception e) {
+              e.printStackTrace();
             JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");
         }
     }//GEN-LAST:event_jButton4ActionPerformed

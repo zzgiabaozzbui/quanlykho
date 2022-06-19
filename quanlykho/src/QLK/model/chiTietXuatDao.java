@@ -35,7 +35,7 @@ public class chiTietXuatDao {
                 xuat = new chiTietXuat();
                 xuat.setMaCTXuat(rs.getInt("maCTXuat"));
                 xuat.setMaXuat(rs.getInt("maXuat"));
-                xuat.setMaSanPham(rs.getInt("maSanPham"));
+                xuat.setMaSanPham(rs.getString("maSanPham"));
                 xuat.setSoLuong(rs.getInt("soLuong"));
                 xuat.setGiaXuat(rs.getFloat("giaXuat"));
                 list.add(xuat);
@@ -53,7 +53,7 @@ public class chiTietXuatDao {
             PreparedStatement ps = conn.prepareStatement(query);
 
             ps.setInt(1, xuat.getMaXuat());
-            ps.setInt(2, xuat.getMaSanPham());
+            ps.setString(2, xuat.getMaSanPham());
             ps.setInt(3, xuat.getSoLuong());
             ps.setFloat(4, xuat.getGiaXuat());
 
@@ -78,7 +78,7 @@ public class chiTietXuatDao {
             String query = "Update chitietxuat set maSanPham=?,soLuong=?,giaXuat=? where maXuat=?";
             PreparedStatement ps = conn.prepareStatement(query);
 
-            ps.setInt(1, t.getMaSanPham());
+            ps.setString(1, t.getMaSanPham());
             ps.setInt(2, t.getSoLuong());
             ps.setFloat(3, t.getGiaXuat());
             ps.setInt(4, t.getMaCTXuat());

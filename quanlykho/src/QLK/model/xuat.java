@@ -13,8 +13,8 @@ import java.sql.Timestamp;
  */
 public class xuat {
     private int maXuat;
-    private int maKh;
-    private int maNV;
+    private String maKH;
+    private String maNV;
     private Timestamp thoiGian;
     private float thanhTien;
     private int trangThai;
@@ -23,9 +23,9 @@ public class xuat {
     public xuat() {
     }
 
-    public xuat(int maXuat, int maKh, int maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
+    public xuat(int maXuat, String maKH, String maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
         this.maXuat = maXuat;
-        this.maKh = maKh;
+        this.maKH = maKH;
         this.maNV = maNV;
         this.thoiGian = thoiGian;
         this.thanhTien = thanhTien;
@@ -40,19 +40,19 @@ public class xuat {
         this.maXuat = maXuat;
     }
 
-    public int getMaKh() {
-        return maKh;
+    public String getMaKH() {
+        return maKH;
     }
 
-    public void setMaKh(int maKh) {
-        this.maKh = maKh;
+    public void setMaKH(String maKH) {
+        this.maKH = maKH;
     }
 
-    public int getMaNV() {
+    public String getMaNV() {
         return maNV;
     }
 
-    public void setMaNV(int maNV) {
+    public void setMaNV(String maNV) {
         this.maNV = maNV;
     }
 

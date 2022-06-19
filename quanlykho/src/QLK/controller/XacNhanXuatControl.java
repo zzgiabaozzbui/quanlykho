@@ -37,7 +37,7 @@ public class XacNhanXuatControl {
     }
     
     
-    public TableModel getData(int maNV)
+    public TableModel getData(String maNV)
     {
         Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
@@ -51,7 +51,7 @@ public class XacNhanXuatControl {
             xk=xd.getListNot(maNV).get(i);
             row=new Vector();
             row.add(xk.getMaXuat());
-            row.add(xk.getMaKh());
+            row.add(xk.getMaKH());
             row.add(xk.getThoiGian() == null ? formatter.format(new Date()) : formatter.format(xk.getThoiGian()));
             row.add(xk.getThanhTien());
             if(xk.getTrangThai()==1)
@@ -66,14 +66,14 @@ public class XacNhanXuatControl {
         }
         return model;
     }
-    public void xacNhan(xuat xuat,int maNV)
+    public void xacNhan(xuat xuat,String maNV)
     {
         int maKho=getMaKho(maNV);
         xd.update(xuat);
         List list=ctxdao.getList(xuat.getMaXuat());
         for (int i = 0; i < list.size(); i++) {
             chiTietXuat ctx=(chiTietXuat) list.get(i);
-            ThongTinKho ttk=new ThongTinKho(maKho, xuat.getMaKh(), ctx.getMaSanPham(), ctx.getSoLuong(), ctx.getGiaXuat());
+            ThongTinKho ttk=new ThongTinKho(maKho, "", ctx.getMaSanPham(), ctx.getSoLuong(), ctx.getGiaXuat());
             if(ttkdao.check(ttk)==0)
             {
                 ttkdao.insert(ttk);
@@ -87,7 +87,7 @@ public class XacNhanXuatControl {
         }
     }
 
-    private int getMaKho(int maNV) {
+    private int getMaKho(String maNV) {
         return 1;
     }
 }

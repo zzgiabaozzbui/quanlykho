@@ -15,8 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import QLK.controller.ThemPhieuXuatControl;
 import QLK.controller.XacNhanXuatControl;
-import QLK.model.khachHang1;
+import QLK.model.KhachHang;
 import QLK.model.xuat;
+import QLK.util.PropertiesNVNow;
 /**
  *
  * @author ADMIN
@@ -27,11 +28,12 @@ public class XacNhanXuat extends javax.swing.JPanel {
      * Creates new form XacNhanXuat
      */
     XacNhanXuatControl xnx=new XacNhanXuatControl(this);
+     String maNV=new PropertiesNVNow().getRemember().get(0);
     public XacNhanXuat() {
         initComponents();
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        table.setModel(xnx.getData(1));
+        table.setModel(xnx.getData(maNV));
     }
 
     public void next()
@@ -149,7 +151,8 @@ public class XacNhanXuat extends javax.swing.JPanel {
             int column = 0;
             row = table.getSelectedRow();
             String value = table.getModel().getValueAt(row, column).toString();
-            int maKh = Integer.parseInt(table.getModel().getValueAt(row, 1).toString());
+            //int maKh = Integer.parseInt(table.getModel().getValueAt(row, 1).toString());
+            String maKh = table.getModel().getValueAt(row, 1).toString();
             int k=JOptionPane.showConfirmDialog(null,"Bạn có muốn xác nhận phiếu xuất có mã "+table.getModel().getValueAt(row, 0).toString()+" ? ");
             if(k==0)
             {
@@ -157,8 +160,8 @@ public class XacNhanXuat extends javax.swing.JPanel {
                 xuat.setMaXuat(Integer.parseInt(value));
                 xuat.setThanhTien(0);
                 xuat.setTrangThai(1);
-                xuat.setMaKh(maKh);
-                xnx.xacNhan(xuat,1);
+                xuat.setMaKH(maKh);
+                xnx.xacNhan(xuat,maNV);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");

@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import QLK.controller.TTPhieuXuatControl;
 import QLK.controller.ThemPhieuXuatControl;
 import QLK.model.chiTietXuat;
-import QLK.model.khachHang1;
+import QLK.model.KhachHang;
 import QLK.model.xuat;
 /**
  *

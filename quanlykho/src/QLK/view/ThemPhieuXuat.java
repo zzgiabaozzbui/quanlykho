@@ -15,8 +15,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import QLK.controller.ThemPhieuXuatControl;
-import QLK.model.khachHang1;
+import QLK.model.KhachHang;
 import QLK.model.xuat;
+import QLK.util.PropertiesNVNow;
 /**
  *
  * @author ADMIN
@@ -26,7 +27,7 @@ public class ThemPhieuXuat extends javax.swing.JPanel {
     /**
      * Creates new form ThemPhieuXuat
      */
-    
+    String maNV=new PropertiesNVNow().getRemember().get(0);
     ThemPhieuXuatControl xc=new ThemPhieuXuatControl(this);
     public ThemPhieuXuat() {
         initComponents();
@@ -154,8 +155,8 @@ public class ThemPhieuXuat extends javax.swing.JPanel {
             if(k==0)
             {
                 xuat xuat=new xuat();
-                xuat.setMaKh(Integer.parseInt(value));
-                xuat.setMaNV(1);
+                xuat.setMaKH(value);
+                xuat.setMaNV(maNV);
                 xc.add(xuat);
             }
         } catch (Exception e) {

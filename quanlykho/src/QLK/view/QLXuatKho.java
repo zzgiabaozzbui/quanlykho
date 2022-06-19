@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import QLK.controller.XuatKhoControl;
+import QLK.util.PropertiesNVNow;
 
 /**
  *
@@ -22,11 +23,12 @@ public class QLXuatKho extends javax.swing.JPanel {
      * Creates new form QLXuatKho
      */
     XuatKhoControl xkc=new XuatKhoControl(this);
+    String maNV=new PropertiesNVNow().getRemember().get(0);
     public QLXuatKho() {
         initComponents();
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        table.setModel(xkc.getModelTable(1));
+        table.setModel(xkc.getModelTable(maNV));
     }
     
     public void reset()
@@ -310,23 +312,23 @@ public class QLXuatKho extends javax.swing.JPanel {
     }//GEN-LAST:event_btnChiTietActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        table.setModel(xkc.getModelBy(4, 1));
+        table.setModel(xkc.getModelBy(4, maNV));
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        table.setModel(xkc.getModelTable(1));
+        table.setModel(xkc.getModelTable(maNV));
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
-        table.setModel(xkc.getModelBy(1, 1));
+        table.setModel(xkc.getModelBy(1, maNV));
     }//GEN-LAST:event_btnSearch1ActionPerformed
 
     private void btnSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch2ActionPerformed
-        table.setModel(xkc.getModelBy(3, 1));
+        table.setModel(xkc.getModelBy(3, maNV));
     }//GEN-LAST:event_btnSearch2ActionPerformed
 
     private void btnSearch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch3ActionPerformed
-        table.setModel(xkc.getModelBy(2, 1));
+        table.setModel(xkc.getModelBy(2, maNV));
     }//GEN-LAST:event_btnSearch3ActionPerformed
 
 

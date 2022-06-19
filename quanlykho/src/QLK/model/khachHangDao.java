@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class khachHangDao {
     Connection conn = MyConnection.getInstance().getConnection();
-    public List<khachHang1> getList() {
+    public List<KhachHang> getList() {
        List list=new ArrayList<>();
-       khachHang1 kh=null;
+       KhachHang kh=null;
         try 
         {
             String query="Select * from khachhang";
@@ -30,12 +30,12 @@ public class khachHangDao {
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
-                 kh=new khachHang1();
-                 kh.setMaKh(rs.getInt("maKh"));
+                 kh=new KhachHang();
+                 kh.setMaKH(rs.getString("maKH"));
                  kh.setTenKH(rs.getString("tenKH"));
                  kh.setDiaChi(rs.getString("diaChi"));
-                 kh.setSdt(rs.getString("sdt"));
-                 kh.setCmnd(rs.getString("cmnd"));
+                 kh.setSDT(rs.getString("SDT"));
+                 kh.setCMND(rs.getString("CMND"));
  
                  list.add(kh);
              }
@@ -47,22 +47,22 @@ public class khachHangDao {
         }
        return list;
     }
-    public String getName(int maKh) {
-       khachHang1 kh=null;
+    public String getName(String maKH) {
+       KhachHang kh=null;
         try 
         {
             String query="Select * from khachhang where maKh=?";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1, maKh);
+             ps.setString(1, maKH);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
-                 kh=new khachHang1();
-                 kh.setMaKh(rs.getInt("maKh"));
+                 kh=new KhachHang();
+                 kh.setMaKH(rs.getString("maKH"));
                  kh.setTenKH(rs.getString("tenKH"));
                  kh.setDiaChi(rs.getString("diaChi"));
-                 kh.setSdt(rs.getString("sdt"));
-                 kh.setCmnd(rs.getString("cmnd"));
+                 kh.setSDT(rs.getString("SDT"));
+                 kh.setCMND(rs.getString("CMND"));
              }
             
         }

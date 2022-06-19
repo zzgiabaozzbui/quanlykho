@@ -31,7 +31,7 @@ public class XuatKhoControl {
     }
     
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-    public TableModel getModelTable(int maNV)
+    public TableModel getModelTable(String maNV)
     {
         Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
@@ -45,7 +45,7 @@ public class XuatKhoControl {
             xk=xd.getList(maNV).get(i);
             row=new Vector();
             row.add(xk.getMaXuat());
-            row.add(khd.getName(xk.getMaKh()));
+            row.add(khd.getName(xk.getMaKH()));
             row.add(xk.getThoiGian() == null ? formatter.format(new Date()) : formatter.format(xk.getThoiGian()));
             row.add(xk.getThanhTien());
             if(xk.getTrangThai()==1)
@@ -72,7 +72,7 @@ public class XuatKhoControl {
         
     }
 
-    public DefaultTableModel getModelBy(int  x,int maNV) {
+    public DefaultTableModel getModelBy(int  x,String maNV) {
          Vector row = null;
         DefaultTableModel model=new DefaultTableModel();
         model.addColumn("Mã xuất kho");
@@ -87,7 +87,7 @@ public class XuatKhoControl {
             xk=xd.getListBy(x, maNV).get(i);
             row=new Vector();
             row.add(xk.getMaXuat());
-            row.add(khd.getName(xk.getMaKh()));
+            row.add(khd.getName(xk.getMaKH()));
             row.add(formatter.format(xk.getThoiGian()));
             row.add(xk.getThanhTien());
             if(xk.getTrangThai()==1)

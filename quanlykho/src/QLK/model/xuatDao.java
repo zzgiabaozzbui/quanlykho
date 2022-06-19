@@ -21,21 +21,21 @@ import javax.swing.JOptionPane;
 public class xuatDao {
         Connection conn = MyConnection.getInstance().getConnection();
 
-    public List<xuat> getList(int maNV) {
+    public List<xuat> getList(String maNV) {
        List list=new ArrayList<>();
        xuat xuat=null;
         try 
         {
             String query="Select * from xuat where maNV=?";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  xuat=new xuat();
                  xuat.setMaXuat(rs.getInt("maXuat"));
-                 xuat.setMaKh(rs.getInt("maKh"));
-                 xuat.setMaNV(rs.getInt("maNV"));
+                 xuat.setMaKH(rs.getString("maKH"));
+                 xuat.setMaNV(rs.getString("maNV"));
                  xuat.setThoiGian(rs.getTimestamp("thoiGian"));
                  xuat.setThanhTien(rs.getFloat("thanhTien"));
                  xuat.setTrangThai(rs.getInt("trangThai"));
@@ -49,21 +49,21 @@ public class xuatDao {
         }
        return list;
     }
-    public List<xuat> getListNot(int maNV) {
+    public List<xuat> getListNot(String maNV) {
        List list=new ArrayList<>();
        xuat xuat=null;
         try 
         {
             String query="Select * from xuat where maNV=? and trangThai=0";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  xuat=new xuat();
                  xuat.setMaXuat(rs.getInt("maXuat"));
-                 xuat.setMaKh(rs.getInt("maKh"));
-                 xuat.setMaNV(rs.getInt("maNV"));
+                 xuat.setMaKH(rs.getString("maKH"));
+                 xuat.setMaNV(rs.getString("maNV"));
                  xuat.setThoiGian(rs.getTimestamp("thoiGian"));
                  xuat.setThanhTien(rs.getFloat("thanhTien"));
                  xuat.setTrangThai(rs.getInt("trangThai"));
@@ -86,8 +86,8 @@ public class xuatDao {
              String query="Insert into xuat values(null,?,?,DEFAULT,?,0)";
              PreparedStatement ps = conn.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS);
              
-             ps.setInt(1, xuat.getMaKh());
-             ps.setInt(2, xuat.getMaNV());
+             ps.setString(1, xuat.getMaKH());
+             ps.setString(2, xuat.getMaNV());
              ps.setFloat(3, xuat.getThanhTien());
              int k=ps.executeUpdate();
              ResultSet rs = ps.getGeneratedKeys();
@@ -193,7 +193,7 @@ public class xuatDao {
         }
         return 0;
     }
-    public List<xuat> getListBy(int x,int maNV) {
+    public List<xuat> getListBy(int x,String maNV) {
        List list=new ArrayList<>();
        xuat xuat=null;
         try 
@@ -218,14 +218,14 @@ public class xuatDao {
                     
             String query="Select * from xuat where maNV=? "+by;
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1,maNV);
+             ps.setString(1,maNV);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  xuat=new xuat();
                  xuat.setMaXuat(rs.getInt("maXuat"));
-                 xuat.setMaKh(rs.getInt("maKh"));
-                 xuat.setMaNV(rs.getInt("maNV"));
+                 xuat.setMaKH(rs.getString("maKH"));
+                 xuat.setMaNV(rs.getString("maNV"));
                  xuat.setThoiGian(rs.getTimestamp("thoiGian"));
                  xuat.setThanhTien(rs.getFloat("thanhTien"));
                  xuat.setTrangThai(rs.getInt("trangThai"));
@@ -238,9 +238,5 @@ public class xuatDao {
             e.printStackTrace();
         }
        return list;
-    }
-    public static void main(String[] args) {
-        
-        System.out.println(new xuatDao().insert(new xuat(0,1,1,null,0,0)));
     }
 }

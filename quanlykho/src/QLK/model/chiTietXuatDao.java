@@ -37,7 +37,6 @@ public class chiTietXuatDao {
                 xuat.setMaXuat(rs.getInt("maXuat"));
                 xuat.setMaSanPham(rs.getString("maSanPham"));
                 xuat.setSoLuong(rs.getInt("soLuong"));
-                xuat.setGiaXuat(rs.getFloat("giaXuat"));
                 list.add(xuat);
             }
 
@@ -49,7 +48,7 @@ public class chiTietXuatDao {
 
     public int insert(chiTietXuat xuat) {
         try {
-            String query = "Insert into chitietxuat values(null,?,?,?,?)";
+            String query = "Insert into chitietxuat values(null,?,?,null,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
 
             ps.setInt(1, xuat.getMaXuat());

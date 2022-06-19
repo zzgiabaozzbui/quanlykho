@@ -216,7 +216,7 @@ public class ThemCTPX extends javax.swing.JPanel {
             {
 
                 chiTietXuat xuat=new chiTietXuat();
-                xuat.setMaSanPham(Integer.parseInt(value));
+                xuat.setMaSanPham(value);
                 xuat.setMaXuat(maXuat);
                 xuat.setSoLuong((int) spinSL1.getValue());
                 int giaXuat= (int) spinSL.getValue();

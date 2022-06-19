@@ -31,7 +31,7 @@ public class ThongTinKhoDao {
              {
                  tt=new ThongTinKho();
                  tt.setMaKho(rs.getInt("maKho"));
-                 tt.setMaNCC(rs.getInt("maNCC"));
+                 tt.setMaNCC(rs.getString("maNCC"));
                  tt.setMaSP(rs.getString("maSanPham"));
                  tt.setSoLuong(rs.getInt("soLuong"));
                  tt.setGiaXuat(rs.getFloat("giaXuat"));
@@ -52,7 +52,7 @@ public class ThongTinKhoDao {
              String query="Insert into thongtinkho values(?,?,?,?,?)";
              PreparedStatement ps = conn.prepareStatement(query);
              ps.setInt(1, ttk.getMaKho());
-             ps.setInt(2, ttk.getMaNCC());
+             ps.setString(2, ttk.getMaNCC());
              ps.setString(3, ttk.getMaSP());
              ps.setInt(4, ttk.getSoLuong());
              ps.setFloat(5, ttk.getGiaXuat());
@@ -87,7 +87,7 @@ public class ThongTinKhoDao {
              
              PreparedStatement ps = conn.prepareStatement(query);
     
-             ps.setInt(2, t.getMaNCC());
+             ps.setString(2, t.getMaNCC());
              ps.setString(4, t.getMaSP());
              
              ps.setFloat(3, t.getGiaXuat());
@@ -113,7 +113,7 @@ public class ThongTinKhoDao {
              String query="Update thongtinkho set soLuong=soLuong+? where maKho=? and maNCC=? and giaXuat=? and maSanPham=?";
              PreparedStatement ps = conn.prepareStatement(query);
     
-             ps.setInt(3, t.getMaNCC());
+             ps.setString(3, t.getMaNCC());
              ps.setString(5, t.getMaSP());
              ps.setFloat(4, t.getGiaXuat());
              ps.setInt(2, t.getMaKho());

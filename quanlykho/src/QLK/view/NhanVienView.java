@@ -5,6 +5,7 @@
  */
 package QLK.view;
 
+import QLK.Login.Home;
 import QLK.controller.NhanVienDao;
 import QLK.model.Kho;
 import QLK.model.staff;
@@ -296,9 +297,9 @@ public class NhanVienView extends javax.swing.JFrame {
                 .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(212, 212, 212)
                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(298, 298, 298)
+                .addGap(90, 90, 90)
                 .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+                .addGap(318, 318, 318))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(lblerro, javax.swing.GroupLayout.PREFERRED_SIZE, 1105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -728,6 +729,7 @@ public class NhanVienView extends javax.swing.JFrame {
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
 
          this.dispose();
+          new Home().setVisible(true);
     }//GEN-LAST:event_btnexitActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

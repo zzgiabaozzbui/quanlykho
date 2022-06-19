@@ -6,6 +6,7 @@
 package QLK.view;
 
 
+import QLK.Login.Home;
 import QLK.controller.NhaCungCapDao;
 import QLK.model.NhaCungCap;
 import java.util.List;
@@ -516,6 +517,7 @@ public class NhaCungCapView extends javax.swing.JFrame {
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.dispose();
+         new Home().setVisible(true);
     }//GEN-LAST:event_btnThoatActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

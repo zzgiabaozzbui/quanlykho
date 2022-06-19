@@ -6,6 +6,7 @@
 package QLK.view;
 
 
+import QLK.Login.Home;
 import QLK.controller.KhachHangDao;
 import QLK.model.KhachHang;
 
@@ -542,6 +543,7 @@ public class KhachHangView extends javax.swing.JFrame {
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.dispose();
+        new Home().setVisible(true);
         
     }//GEN-LAST:event_btnThoatActionPerformed
 

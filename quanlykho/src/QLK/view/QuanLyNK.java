@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import QLK.controller.NhapKhoControl;
+import QLK.util.PropertiesNVNow;
 
 /**
  *
@@ -22,7 +23,7 @@ public class QuanLyNK extends javax.swing.JPanel {
      * Creates new form QuanLyNK
      */
     NhapKhoControl nkc;
-    String maNV="NV01";
+    String maNV=new PropertiesNVNow().getRemember().get(0);
     
     public QuanLyNK() {
         

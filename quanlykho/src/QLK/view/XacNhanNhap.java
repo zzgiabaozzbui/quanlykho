@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import QLK.controller.XacNhanNhapControl;
 import QLK.model.Nhap;
+import QLK.util.PropertiesNVNow;
 
 /**
  *
@@ -23,12 +24,13 @@ public class XacNhanNhap extends javax.swing.JPanel {
      * Creates new form PanelDatDichVu
      */
     XacNhanNhapControl xnn;
+    String maNV=new PropertiesNVNow().getRemember().get(0);
     public XacNhanNhap() {
         initComponents();
         xnn=new XacNhanNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
-        table.setModel(xnn.getData("NV01"));
+        table.setModel(xnn.getData(maNV));
     }
     public void next()
     {
@@ -157,7 +159,7 @@ public class XacNhanNhap extends javax.swing.JPanel {
                 nhap.setThanhTien(0);
                 nhap.setTrangThai(1);
                 nhap.setMaNCC(maNCC);
-                xnn.xacNhan(nhap,"NV01");
+                xnn.xacNhan(nhap,maNV);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null," Bạn phải chọn phiếu nhập trước !");

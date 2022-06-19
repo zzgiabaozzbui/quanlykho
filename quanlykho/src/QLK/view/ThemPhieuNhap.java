@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import QLK.controller.ThemPhieuNhapControl;
 import QLK.model.Nhap;
+import QLK.util.PropertiesNVNow;
 
 /**
  *
@@ -24,10 +25,12 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
     /**
      * Creates new form PanelDatDichVu
      */
+    String maNV=new PropertiesNVNow().getRemember().get(0);
     ThemPhieuNhapControl nc;
     public ThemPhieuNhap() {
-      
         initComponents();
+        
+        
         nc=new ThemPhieuNhapControl(this);
         table.setDefaultEditor(Object.class, null);
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
@@ -157,7 +160,7 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
                 Nhap nhap=new Nhap();
                 nhap.setMaNCC(Integer.parseInt(value));
                 
-                nhap.setMaNV("NV01");
+                nhap.setMaNV(maNV);
                 
                 nc.add(nhap);
             }

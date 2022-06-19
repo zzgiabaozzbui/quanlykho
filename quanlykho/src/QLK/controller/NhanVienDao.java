@@ -268,5 +268,7 @@ public class NhanVienDao implements Dao<staff> {
   
     n.update(new staff("NV04","a","a","a","a","a","1","2"));
     }
+    
+    
 
 }

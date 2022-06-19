@@ -363,7 +363,9 @@ public class KhoView extends javax.swing.JFrame {
                
                 if(tenKho.length()>50)
                 {        
-                    JOptionPane.showMessageDialog(rootPane, "Bạn đã nhập quá 50 kí tự! Yêu cầu nhập lại","Cảnh báo",JOptionPane.WARNING_MESSAGE);                    
+                    JOptionPane.showMessageDialog(rootPane, "Bạn đã nhập quá 50 kí tự! Yêu cầu nhập lại","Cảnh báo",JOptionPane.WARNING_MESSAGE); 
+                    txtTenKho.setText("");
+                    txtTenKho.requestFocus();
                 }
                 else{                   
                     Kho kho= new Kho(maKho,tenKho);

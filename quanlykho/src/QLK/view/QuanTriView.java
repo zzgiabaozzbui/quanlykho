@@ -62,8 +62,10 @@ public class QuanTriView extends javax.swing.JFrame {
                 btnS.setEnabled(true);
                 btnX.setEnabled(true);
                 btnPQ.setEnabled(true);
+                
                 int index = tblTK.getSelectedRow();
-                String valueAt = (String) tblTK.getValueAt(index, 1);
+                String valueAt = (String) tblTK.getValueAt(index, 2);
+                System.out.println(valueAt);
                 taikhoancontroller usd  = new taikhoancontroller();
                 
                 user pUpdate = usd.getUser(valueAt+"");

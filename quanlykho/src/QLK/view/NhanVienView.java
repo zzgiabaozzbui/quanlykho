@@ -10,6 +10,7 @@ import QLK.model.Kho;
 import QLK.model.staff;
 import java.util.List;
 import java.util.Vector;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +23,8 @@ public class NhanVienView extends javax.swing.JFrame {
     String idUpdateNV = "";
     String getIDNhanVien = "";
     int demNV;
+   public static String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
     DefaultTableModel dtmDanhSachNhanVien;
     NhanVienDao nhanviendao = new NhanVienDao();
     staff nhacungcap = new staff();
@@ -34,6 +37,11 @@ public class NhanVienView extends javax.swing.JFrame {
         txtMaNV.setEnabled(false);
     }
 
+    public static boolean patternMatches(String emailAddress, String regexPattern) {
+        return Pattern.compile(regexPattern)
+                .matcher(emailAddress)
+                .matches();
+    }
     public void addCbo() {
         cboCV.addItem("Nhân viên");
         cboCV.addItem("Quản lý");
@@ -585,11 +593,14 @@ public class NhanVienView extends javax.swing.JFrame {
             txtDC.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập địa chỉ!");
             return;
-        } else if (txtemail.getText().trim().equals("")) {
-            txtemail.requestFocus();
-            JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập email!");
+        }
+        else if (patternMatches(txtemail.getText().trim(), regexPattern) == false) {
+        txtemail.requestFocus();
+            JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập email đúng định dạng!");
             return;
-        } else if (txtCMND.getText().trim().equals("")) {
+        }
+        
+       else if (txtCMND.getText().trim().equals("")) {
             txtCMND.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập CMND!");
             return;

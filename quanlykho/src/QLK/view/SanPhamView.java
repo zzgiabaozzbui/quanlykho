@@ -26,6 +26,8 @@ public class SanPhamView extends javax.swing.JFrame {
     public String state;
     DefaultTableModel defaultTableModel;
     SanPhamController sanPhamController=new SanPhamController();
+    List<SanPham> listSpCurrent=new ArrayList<>();
+    String idInsert="";
     /**
      * Creates new form SanPham
      */
@@ -277,6 +279,20 @@ public class SanPhamView extends javax.swing.JFrame {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
          state="insert";
+         for (SanPham sanPham : listSpCurrent) {
+                    if(listSpCurrent.size()==0)
+                     idInsert="sp001";
+                    else
+                     idInsert=sanPham.getMaSanPham();
+      
+                }
+                int chuoi2 = Integer.parseInt(idInsert.substring(4)); 
+                if (chuoi2 + 1 < 10) {
+                idInsert = "sp00" + (chuoi2 + 1);
+            } else if (chuoi2 + 1 < 100) {
+                idInsert = "sp0" + (chuoi2 + 1);
+            }
+                txtMaSP.setText(idInsert);
          loadbtn(state);
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -322,15 +338,16 @@ public class SanPhamView extends javax.swing.JFrame {
         switch(state)
         {
             case "insert":
-                boolean checkError=false;
-           
+                boolean checkError=false;        
                 String maSP= txtMaSP.getText().trim();
                 String tenSP= txtTenSP.getText().trim();
                 String moTa=txtMoTaSP.getText().trim();
                 
-                if(maSP.length()==0)
+                if(tenSP.length()>50)
                 {        
-                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mã sản phẩm","Cảnh báo",JOptionPane.WARNING_MESSAGE);                    
+                    JOptionPane.showMessageDialog(rootPane, "Bạn đã nhập quá 50 kí tự! Yêu cầu nhập lại!","Cảnh báo",JOptionPane.WARNING_MESSAGE);
+                    txtTenSP.setText("");
+                    txtTenSP.requestFocus();
                 }
                 else{                   
                     SanPham sanPham= new SanPham(maSP,tenSP,moTa);
@@ -492,7 +509,7 @@ public class SanPhamView extends javax.swing.JFrame {
                 break;
             case "insert":
                 
-                txtMaSP.setEnabled(true);
+                txtMaSP.setEnabled(false);
                 txtTenSP.setEnabled(true);
                 txtMoTaSP.setEnabled(true);
                 
@@ -525,11 +542,13 @@ public class SanPhamView extends javax.swing.JFrame {
     
     
     private void loadJTable() {
+        listSpCurrent.clear();
         defaultTableModel=new DefaultTableModel();
         String[] columnTitle = {"Mã sản phẩm", "Tên sản phẩm", "Mô tả"};
         defaultTableModel.setColumnIdentifiers(columnTitle);
         Object[] dataRow;
         List<SanPham> listSP = sanPhamController.getAll();
+        listSpCurrent.addAll(listSP);
         for (SanPham sp : listSP) {
             dataRow = new Object[]{sp.getMaSanPham(), sp.getTenSanPham(), sp.getMoTa()};
             defaultTableModel.addRow(dataRow);

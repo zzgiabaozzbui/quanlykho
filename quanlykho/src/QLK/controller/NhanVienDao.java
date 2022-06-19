@@ -269,6 +269,24 @@ public class NhanVienDao implements Dao<staff> {
     n.update(new staff("NV04","a","a","a","a","a","1","2"));
     }
     
+    public int getNVbyID(String maNV) {
+        int IDKho=-1;
+        try {
+            String sql = "select * from nhanvien where maNV=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, maNV);
+            
+            ResultSet rs = ps.executeQuery(sql);
+            while (rs.next()) {
+                 IDKho = rs.getInt("maKho");
+ 
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return IDKho;
+    }
+    
     
 
 }

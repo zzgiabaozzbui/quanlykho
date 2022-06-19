@@ -87,7 +87,12 @@ public class XacNhanNhapControl {
     }
 
     private int getMaKho(String maNV) {
-        return Integer.parseInt(new NhanVienDao().get(maNV).get().getMaKho());
+        try {
+            return new NhanVienDao().getNVbyID(maNV);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 1;
     }
     
 }

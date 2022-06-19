@@ -12,20 +12,21 @@ package QLK.model;
 public class chiTietXuat {
     private int maCTXuat;
     private int maXuat;
-    private int maSanPham;
+    private String maSanPham;
     private int soLuong;
     private float giaXuat;
 
     public chiTietXuat() {
     }
-    
-    public chiTietXuat(int maCTXuat, int maXuat, int maSanPham, int soLuong, float giaXuat) {
+
+    public chiTietXuat(int maCTXuat, int maXuat, String maSanPham, int soLuong, float giaXuat) {
         this.maCTXuat = maCTXuat;
         this.maXuat = maXuat;
         this.maSanPham = maSanPham;
         this.soLuong = soLuong;
         this.giaXuat = giaXuat;
     }
+    
 
     public int getMaCTXuat() {
         return maCTXuat;
@@ -43,11 +44,11 @@ public class chiTietXuat {
         this.maXuat = maXuat;
     }
 
-    public int getMaSanPham() {
+    public String getMaSanPham() {
         return maSanPham;
     }
 
-    public void setMaSanPham(int maSanPham) {
+    public void setMaSanPham(String maSanPham) {
         this.maSanPham = maSanPham;
     }
 

@@ -36,6 +36,7 @@ public class Home extends javax.swing.JFrame{
 //        setOpaque(false);
         HideMenu();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        PQ();
     }
 
     public void PQ(){
@@ -59,6 +60,7 @@ public class Home extends javax.swing.JFrame{
             btnNCC.setVisible(false);
 
             btnKH.setVisible(false);
+            btnBC.setVisible(false);
             
         
         }else if(st==2){
@@ -76,8 +78,9 @@ public class Home extends javax.swing.JFrame{
             btnKH.setVisible(false);
 
             btnBC.setVisible(true);
-            btnTKX.setVisible(true);
-            btnQLSP.setVisible(false);
+            btnTKN.setVisible(true);
+            btnTKX.setVisible(false);
+            btnBC.setVisible(true);
         
                 
         }else if(st==0){
@@ -90,6 +93,7 @@ public class Home extends javax.swing.JFrame{
             btnQL.setVisible(true);
             btnQLXK.setVisible(true);
             btnK.setVisible(false);
+            btnBC.setVisible(false);
 
         
         }
@@ -140,8 +144,8 @@ public class Home extends javax.swing.JFrame{
         btnKH = new javax.swing.JLabel();
         btnBC = new javax.swing.JLabel();
         pnSP = new javax.swing.JPanel();
+        btnTKN = new javax.swing.JLabel();
         btnTKX = new javax.swing.JLabel();
-        btnQLSP = new javax.swing.JLabel();
         pnHome = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -200,7 +204,7 @@ public class Home extends javax.swing.JFrame{
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                     .addComponent(lblCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel11.setOpaque(false);
@@ -252,7 +256,7 @@ public class Home extends javax.swing.JFrame{
         pnTK.setLayout(pnTKLayout);
         pnTKLayout.setHorizontalGroup(
             pnTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnQLTK, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(btnQLTK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDangXuat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnQLNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -367,7 +371,7 @@ public class Home extends javax.swing.JFrame{
         pnQL.setLayout(pnQLLayout);
         pnQLLayout.setHorizontalGroup(
             pnQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnQLXK, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(btnQLXK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnNK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -464,10 +468,23 @@ public class Home extends javax.swing.JFrame{
 
         pnSP.setOpaque(false);
 
+        btnTKN.setBackground(new java.awt.Color(255, 255, 255));
+        btnTKN.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnTKN.setForeground(new java.awt.Color(255, 255, 255));
+        btnTKN.setText("            Thống kê nhập");
+        btnTKN.setMaximumSize(new java.awt.Dimension(150, 28));
+        btnTKN.setMinimumSize(new java.awt.Dimension(150, 28));
+        btnTKN.setPreferredSize(new java.awt.Dimension(150, 28));
+        btnTKN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTKNMouseClicked(evt);
+            }
+        });
+
         btnTKX.setBackground(new java.awt.Color(255, 255, 255));
         btnTKX.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnTKX.setForeground(new java.awt.Color(255, 255, 255));
-        btnTKX.setText("            Thống kê nhập");
+        btnTKX.setText("            Thống kê xuất");
         btnTKX.setMaximumSize(new java.awt.Dimension(150, 28));
         btnTKX.setMinimumSize(new java.awt.Dimension(150, 28));
         btnTKX.setPreferredSize(new java.awt.Dimension(150, 28));
@@ -477,32 +494,19 @@ public class Home extends javax.swing.JFrame{
             }
         });
 
-        btnQLSP.setBackground(new java.awt.Color(255, 255, 255));
-        btnQLSP.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnQLSP.setForeground(new java.awt.Color(255, 255, 255));
-        btnQLSP.setText("            Thống kê xuất");
-        btnQLSP.setMaximumSize(new java.awt.Dimension(150, 28));
-        btnQLSP.setMinimumSize(new java.awt.Dimension(150, 28));
-        btnQLSP.setPreferredSize(new java.awt.Dimension(150, 28));
-        btnQLSP.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnQLSPMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnSPLayout = new javax.swing.GroupLayout(pnSP);
         pnSP.setLayout(pnSPLayout);
         pnSPLayout.setHorizontalGroup(
             pnSPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnTKX, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-            .addComponent(btnQLSP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTKN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTKX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnSPLayout.setVerticalGroup(
             pnSPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnSPLayout.createSequentialGroup()
-                .addComponent(btnTKX, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTKN, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnQLSP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnTKX, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -510,7 +514,7 @@ public class Home extends javax.swing.JFrame{
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -549,14 +553,18 @@ public class Home extends javax.swing.JFrame{
         pnLeft.setLayout(pnLeftLayout);
         pnLeftLayout.setHorizontalGroup(
             pnLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnLeftLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnLeftLayout.createSequentialGroup()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         pnLeftLayout.setVerticalGroup(
             pnLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnLeftLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -571,7 +579,7 @@ public class Home extends javax.swing.JFrame{
         );
         pnHomeLayout.setVerticalGroup(
             pnHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 993, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -592,23 +600,23 @@ public class Home extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnQLSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLSPMouseClicked
+    private void btnTKXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKXMouseClicked
         pnHome.removeAll();
         pnHome.setLayout(new CardLayout());
         BieuDoXuatSP bieudo=new BieuDoXuatSP();
         pnHome.add(bieudo);
         pnHome.validate();
         pnHome.repaint();
-    }//GEN-LAST:event_btnQLSPMouseClicked
+    }//GEN-LAST:event_btnTKXMouseClicked
 
-    private void btnTKXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKXMouseClicked
+    private void btnTKNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKNMouseClicked
          pnHome.removeAll();
         pnHome.setLayout(new CardLayout());
        BieuDoNhapSP bieudo=new BieuDoNhapSP();
         pnHome.add(bieudo);
         pnHome.validate();
         pnHome.repaint();
-    }//GEN-LAST:event_btnTKXMouseClicked
+    }//GEN-LAST:event_btnTKNMouseClicked
 
     private void btnBCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBCMouseClicked
         boolean a = pnSP.isVisible();
@@ -783,11 +791,11 @@ public class Home extends javax.swing.JFrame{
     private javax.swing.JLabel btnNK;
     private javax.swing.JLabel btnQL;
     private javax.swing.JLabel btnQLNV;
-    private javax.swing.JLabel btnQLSP;
     private javax.swing.JLabel btnQLTK;
     private javax.swing.JLabel btnQLXK;
     private javax.swing.JLabel btnSanPham;
     private javax.swing.JLabel btnTK;
+    private javax.swing.JLabel btnTKN;
     private javax.swing.JLabel btnTKX;
     private javax.swing.JLabel btnTT;
     private javax.swing.JLabel jLabel5;

@@ -9,6 +9,7 @@ import QLK.Login.Home;
 import QLK.Login.login;
 import QLK.controller.ForgetController;
 import QLK.controller.taikhoancontroller;
+import QLK.model.staff;
 import QLK.util.checktext;
 import javax.swing.JOptionPane;
 
@@ -306,43 +307,67 @@ public class ForgetView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnXNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXNMouseClicked
-        String taikhoan = txtUsername.getText().toString();
-        String email = txtemail.getText().toString();
-        String sdt = txtsdt.getText().toString();
-        String cmnd = txtcmnd.getText().toString();
-        String ps = txtPassword.getPassword().toString();
-        String reps = txtRePassword.getPassword().toString();
+        String taikhoan = txtUsername.getText().toString().trim();
+        String email = txtemail.getText().toString().trim();
+        String sdt = txtsdt.getText().toString().trim();
+        String cmnd = txtcmnd.getText().toString().trim();
+        String ps = new String(txtPassword.getPassword());
+        String reps = new String(txtRePassword.getPassword());
         taikhoancontroller tkc = new taikhoancontroller();
-        if(tkc.checkt(taikhoan)){
-            if(ps.equals(reps)){
-                if(new checktext().kiemTraEmail(email)){
-                    if(new checktext().kiemTraSDT(sdt)){
-                        if(new checktext().kiemTraSCMND(cmnd)){
-                            if(new ForgetController().updatePass(taikhoan,ps)){
-                                new ForgetController().updatePass(taikhoan,ps);
-                                JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thành công.");
+        if(!taikhoan.equals("") == true
+                && !email.equals("") ==true
+                && !sdt.equals("")==true
+                && !cmnd.equals("") ==true
+                && !ps.equals("") ==true
+                && !reps.equals("")==true
+                ){
+            if(tkc.checkt(taikhoan)){
+                if(!ps.equals(reps)==false){
+                    if(new checktext().kiemTraEmail(email)){
+                        if(new checktext().kiemTraSDT(sdt)){
+                            if(new checktext().kiemTraSCMND(cmnd)){
+                                if(new ForgetController().updatePass(taikhoan,ps)){
+
+                                    String maNV = tkc.getmaNV(taikhoan);
+                                    staff st = tkc.getStaff(maNV);
+                                    System.out.println(ps);
+                                    if(email.equals(st.getEmail().trim())
+                                            && sdt.equals(st.getSdt().trim())
+                                            && cmnd.equals(st.getCmnd().trim())){
+                                        new ForgetController().updatePass(taikhoan,ps);
+                                        JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thành công.");
+                                        this.dispose();
+                                        new login().setVisible(true);
+                                    }else{
+                                        JOptionPane.showMessageDialog(rootPane, "Thông tin bị sai.");  
+                                    }
+                                }else{
+                                    JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thất bại.");
+                                    new login().setVisible(true);
+                                }
                             }else{
-                                JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thất bại.");
-                                new login().setVisible(true);
+                                JOptionPane.showMessageDialog(rootPane, "Định dạng số cmnd bị sai.");
+                                txtcmnd.requestFocus();
                             }
                         }else{
-                            JOptionPane.showMessageDialog(rootPane, "Định dạng số cmnd bị sai.");
-                            txtcmnd.requestFocus();
+                            JOptionPane.showMessageDialog(rootPane, "Định dạng số điện thoại sai.");
+                            txtsdt.requestFocus();
                         }
                     }else{
-                        JOptionPane.showMessageDialog(rootPane, "Định dạng số điện thoại sai.");
-                        txtsdt.requestFocus();
+                        JOptionPane.showMessageDialog(rootPane, "Định dạng của email sai.");
+                        txtemail.requestFocus();
                     }
                 }else{
-                    JOptionPane.showMessageDialog(rootPane, "Định dạng của email sai.");
-                    txtemail.requestFocus();
+                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu nhập lại phải giống mật khẩu đã nhập.");
+                    txtPassword.requestFocus();
                 }
-            }else
-                JOptionPane.showMessageDialog(rootPane, "Mật khẩu nhập lại phải giống mật khẩu đã nhập.");
-                txtPassword.requestFocus();
-        }else
-            JOptionPane.showMessageDialog(rootPane, "Tài khoản không tồn tại.");
-            txtUsername.requestFocus();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Tài khoản không tồn tại.");
+                txtUsername.requestFocus();
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Thông tin không được để trống.");  
+        }
     }//GEN-LAST:event_btnXNMouseClicked
 
     private void btnXNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXNActionPerformed

@@ -163,6 +163,7 @@ public class QuanTriView extends javax.swing.JFrame {
                     txtTen.setText(selectedValues.getTenNV());
                     txtemail.setText(selectedValues.getEmail());
                     txtbp.setText(selectedValues.getSdt());
+                    btnPQ.setEnabled(true);
                     
                 }
             }
@@ -811,6 +812,7 @@ public class QuanTriView extends javax.swing.JFrame {
                     txtTen.setText(selectedValues.getTenNV());
                     txtemail.setText(selectedValues.getEmail());
                     txtbp.setText(selectedValues.getSdt());
+                    btnPQ.setEnabled(true);
                     
                 }
             }

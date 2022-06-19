@@ -34,7 +34,7 @@ public class checktext {
         boolean kiemtra;
         String input;
         Scanner sc = new Scanner(System.in);
-        String phonePattern = "^(0|\\d{3}-)+\\d{2}-\\d{7}$";
+        String phonePattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
         input = sdt;
         kiemtra = input.matches(phonePattern);
         return kiemtra;

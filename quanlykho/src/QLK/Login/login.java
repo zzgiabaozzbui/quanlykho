@@ -377,8 +377,8 @@ public class login extends javax.swing.JFrame {
         String password = new String(txtPassword.getPassword());
         if (staffd.checkt(userName)) {
             if(tt.equals("1")){
-                pr.addRemember(ma, chucvu, ten);
                 if (staffd.checkLogin(userName, password)) {
+                    pr.addRemember(ma, chucvu, ten);
 
                         if (cboRemember.isSelected()) {
                             propertiesUtil.addRemember(userName, password);

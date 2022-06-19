@@ -53,11 +53,11 @@ public class taikhoancontroller {
    public int PQ(String ma) {
         int so = 0;
         try {
-            String sql_select = "SELECT PhanQuyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT quyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
-                so = rs.getInt("PhanQuyen");
+                so = rs.getInt("quyen");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,11 +107,11 @@ public class taikhoancontroller {
     public String getKhoa(String ma) {
         String so = "";
         try {
-            String sql_select = "SELECT TrangThai FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT trangthai FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
-                so = String.valueOf(rs.getInt("TrangThai"));
+                so = String.valueOf(rs.getInt("trangthai"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,7 +128,7 @@ public class taikhoancontroller {
     public int getCount(String tk) {
         int so = 0;
         try {
-            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM "+TABLE_NAME+" WHERE PhanQuyen = '"+tk+"'";
+            String sql_select = "SELECT COUNT(quyen) AS dem FROM "+TABLE_NAME+" WHERE quyen = '"+tk+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -142,7 +142,7 @@ public class taikhoancontroller {
     public String getmaNV(String tk) {
         String so = "";
         try {
-            String sql_select = "SELECT MaNV FROM "+TABLE_NAME+" WHERE TaiKhoan = '"+tk+"'";
+            String sql_select = "SELECT MaNV FROM "+TABLE_NAME+" WHERE taikhoan = '"+tk+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -158,11 +158,11 @@ public class taikhoancontroller {
         int so = 0 ;
         String c ="";
         try {
-            String sql_select = "SELECT PhanQuyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT quyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
-                so = rs.getInt("PhanQuyen");
+                so = rs.getInt("quyen");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -173,7 +173,7 @@ public class taikhoancontroller {
     public int getTong() {
         int so = 0;
         try {
-            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM "+TABLE_NAME+" ";
+            String sql_select = "SELECT COUNT(quyen) AS dem FROM "+TABLE_NAME+" ";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     

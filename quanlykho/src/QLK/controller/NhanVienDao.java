@@ -272,14 +272,14 @@ public class NhanVienDao implements Dao<staff> {
     public int getNVbyID(String maNV) {
         int IDKho=-1;
         try {
-            String sql = "select * from nhanvien where maNV=?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, maNV);
             
-            ResultSet rs = ps.executeQuery(sql);
+          
+            String sql_select_by_id = "select * from nhanvien where maNV=?";
+            PreparedStatement ps = conn.prepareStatement(sql_select_by_id);
+            ps.setString(1, maNV);
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                  IDKho = rs.getInt("maKho");
- 
             }
         } catch (Exception e) {
             e.printStackTrace();

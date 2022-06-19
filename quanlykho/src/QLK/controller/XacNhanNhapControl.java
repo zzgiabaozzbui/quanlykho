@@ -87,7 +87,9 @@ public class XacNhanNhapControl {
     }
 
     private int getMaKho(String maNV) {
+        System.out.println(maNV);
         try {
+            System.out.println(new NhanVienDao().getNVbyID(maNV)+"MAKHO");
             return new NhanVienDao().getNVbyID(maNV);
         } catch (Exception e) {
             e.printStackTrace();

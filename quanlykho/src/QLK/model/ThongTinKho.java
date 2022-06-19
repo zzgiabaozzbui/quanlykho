@@ -24,6 +24,8 @@ public class ThongTinKho {
         this.giaXuat = giaXuat;
     }
 
+    
+
     public ThongTinKho() {
     }
 

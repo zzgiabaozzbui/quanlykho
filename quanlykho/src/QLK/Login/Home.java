@@ -7,6 +7,7 @@ package QLK.Login;
 
 import QLK.controller.taikhoancontroller;
 import QLK.util.PropertiesNVNow;
+import QLK.view.BieuDoNhapSP;
 import QLK.view.KhachHangView;
 import QLK.view.KhoView;
 import QLK.view.NhaCungCapView;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
 import QLK.view.QuanTriView;
 import QLK.view.SanPhamView;
 import QLK.view.XuatHome;
+import java.awt.CardLayout;
 import java.util.List;
 
 /**
@@ -73,7 +75,7 @@ public class Home extends javax.swing.JFrame{
             btnKH.setVisible(false);
 
             btnBC.setVisible(true);
-            btnQLPT.setVisible(true);
+            btnTKX.setVisible(true);
             btnQLSP.setVisible(false);
         
                 
@@ -137,7 +139,7 @@ public class Home extends javax.swing.JFrame{
         btnKH = new javax.swing.JLabel();
         btnBC = new javax.swing.JLabel();
         pnSP = new javax.swing.JPanel();
-        btnQLPT = new javax.swing.JLabel();
+        btnTKX = new javax.swing.JLabel();
         btnQLSP = new javax.swing.JLabel();
         pnHome = new javax.swing.JPanel();
 
@@ -350,7 +352,7 @@ public class Home extends javax.swing.JFrame{
         btnK.setBackground(new java.awt.Color(255, 255, 255));
         btnK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnK.setForeground(new java.awt.Color(255, 255, 255));
-        btnK.setText("            Quản lý nhập");
+        btnK.setText("            Quản lý kho");
         btnK.setMaximumSize(new java.awt.Dimension(150, 28));
         btnK.setMinimumSize(new java.awt.Dimension(150, 28));
         btnK.setPreferredSize(new java.awt.Dimension(150, 28));
@@ -461,23 +463,23 @@ public class Home extends javax.swing.JFrame{
 
         pnSP.setOpaque(false);
 
-        btnQLPT.setBackground(new java.awt.Color(255, 255, 255));
-        btnQLPT.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnQLPT.setForeground(new java.awt.Color(255, 255, 255));
-        btnQLPT.setText("            Quản lý phụ thu");
-        btnQLPT.setMaximumSize(new java.awt.Dimension(150, 28));
-        btnQLPT.setMinimumSize(new java.awt.Dimension(150, 28));
-        btnQLPT.setPreferredSize(new java.awt.Dimension(150, 28));
-        btnQLPT.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnTKX.setBackground(new java.awt.Color(255, 255, 255));
+        btnTKX.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnTKX.setForeground(new java.awt.Color(255, 255, 255));
+        btnTKX.setText("            Thống kê nhập");
+        btnTKX.setMaximumSize(new java.awt.Dimension(150, 28));
+        btnTKX.setMinimumSize(new java.awt.Dimension(150, 28));
+        btnTKX.setPreferredSize(new java.awt.Dimension(150, 28));
+        btnTKX.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnQLPTMouseClicked(evt);
+                btnTKXMouseClicked(evt);
             }
         });
 
         btnQLSP.setBackground(new java.awt.Color(255, 255, 255));
         btnQLSP.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnQLSP.setForeground(new java.awt.Color(255, 255, 255));
-        btnQLSP.setText("            Quản lý sản phẩm");
+        btnQLSP.setText("            Thống kê xuất");
         btnQLSP.setMaximumSize(new java.awt.Dimension(150, 28));
         btnQLSP.setMinimumSize(new java.awt.Dimension(150, 28));
         btnQLSP.setPreferredSize(new java.awt.Dimension(150, 28));
@@ -491,13 +493,13 @@ public class Home extends javax.swing.JFrame{
         pnSP.setLayout(pnSPLayout);
         pnSPLayout.setHorizontalGroup(
             pnSPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnQLPT, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(btnTKX, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
             .addComponent(btnQLSP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnSPLayout.setVerticalGroup(
             pnSPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnSPLayout.createSequentialGroup()
-                .addComponent(btnQLPT, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTKX, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnQLSP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -595,15 +597,14 @@ public class Home extends javax.swing.JFrame{
         //        new frSanPham().setVisible(true);
     }//GEN-LAST:event_btnQLSPMouseClicked
 
-    private void btnQLPTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLPTMouseClicked
-//        HideMenu();
-//        h.dispose();
-//        try {
-//            new frPhuThu().setVisible(true);
-//        } catch (SQLException ex) {
-//            //            Logger.getLogger(pnLeft.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-    }//GEN-LAST:event_btnQLPTMouseClicked
+    private void btnTKXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTKXMouseClicked
+         pnHome.removeAll();
+        pnHome.setLayout(new CardLayout());
+       BieuDoNhapSP bieudo=new BieuDoNhapSP();
+        pnHome.add(bieudo);
+        pnHome.validate();
+        pnHome.repaint();
+    }//GEN-LAST:event_btnTKXMouseClicked
 
     private void btnBCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBCMouseClicked
         boolean a = pnSP.isVisible();
@@ -778,12 +779,12 @@ public class Home extends javax.swing.JFrame{
     private javax.swing.JLabel btnNK;
     private javax.swing.JLabel btnQL;
     private javax.swing.JLabel btnQLNV;
-    private javax.swing.JLabel btnQLPT;
     private javax.swing.JLabel btnQLSP;
     private javax.swing.JLabel btnQLTK;
     private javax.swing.JLabel btnQLXK;
     private javax.swing.JLabel btnSanPham;
     private javax.swing.JLabel btnTK;
+    private javax.swing.JLabel btnTKX;
     private javax.swing.JLabel btnTT;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

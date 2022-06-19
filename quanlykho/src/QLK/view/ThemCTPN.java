@@ -10,6 +10,7 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import QLK.controller.CTNhapControl;
+import QLK.controller.NhapKhoControl;
 import QLK.model.ChiTietNhap;
 
 /**
@@ -22,12 +23,14 @@ public class ThemCTPN extends javax.swing.JPanel {
      * Creates new form PanelDatDichVu
      */
     CTNhapControl ctncontrol;
+    NhapKhoControl nhapKhoControl;
     int maNhap=0;
     int count=0;
     
     public ThemCTPN(int x) {
         try {
         ctncontrol=new CTNhapControl(this);
+        nhapKhoControl=new NhapKhoControl(this);
         maNhap=x;
         initComponents();
         jTable1.setDefaultEditor(Object.class, null);
@@ -39,6 +42,20 @@ public class ThemCTPN extends javax.swing.JPanel {
             e.printStackTrace();
         }
        
+    }
+    
+    public void result(int x)
+    {
+        if(x==1)
+        {
+            this.removeAll();
+            this.setLayout(new CardLayout());
+            this.add(new ThemPhieuNhap());
+            this.validate();
+            this.repaint();
+           
+        }
+        
     }
 
     /**
@@ -215,7 +232,11 @@ public class ThemCTPN extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         if(count==0)
         {
-            JOptionPane.showMessageDialog(null,"Bạn chưa thêm sản phẩm ");
+            int k=JOptionPane.showConfirmDialog(null,"Bạn chưa thêm sản phẩm nào vào phiếu nhập , bạn vẫn muốn kết thúc ");
+            if(k==0)
+            {
+                nhapKhoControl.deletePN(maNhap);
+            }
         }
         else
         {
@@ -223,15 +244,13 @@ public class ThemCTPN extends javax.swing.JPanel {
             if(k==0)
             {
                 this.removeAll();
-                 this.setLayout(new CardLayout());
-                 this.add(new ThemPhieuNhap());
+                this.setLayout(new CardLayout());
+                this.add(new ThemPhieuNhap());
                 this.validate();
-                 this.repaint();
+                this.repaint();
             }
-            
          }
-            
-        
+           
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -254,8 +273,8 @@ public class ThemCTPN extends javax.swing.JPanel {
                 else
                 {
                     nhap.setSoLuong((int) spinSL1.getValue());
-                int giaNhap= (int) spinSL.getValue();
-                nhap.setGiaNhap(giaNhap*1000);
+                     int giaNhap= (int) spinSL.getValue();
+                    nhap.setGiaNhap(giaNhap*1000);
                
                 int result=ctncontrol.add(nhap);
                 if(result==1)

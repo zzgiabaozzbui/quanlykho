@@ -81,13 +81,12 @@ public class NhapKhoDao {
     }
 
     public int insert(Nhap nhap) {
-        int key=0;
+        int key=-1;
         try 
         {
             
              String query="Insert into nhap values(null,?,?,DEFAULT,0,0)";
              PreparedStatement ps = conn.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS);
-             
              ps.setInt(1, nhap.getMaNCC());
              ps.setString(2, nhap.getMaNV());
              int k=ps.executeUpdate();
@@ -100,6 +99,7 @@ public class NhapKhoDao {
         catch (Exception e) 
         {
             e.printStackTrace();
+            key=-1;
         }
         return key;
     }

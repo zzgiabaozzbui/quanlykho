@@ -72,13 +72,14 @@ public class XacNhanNhapControl {
         for (int i = 0; i < list.size(); i++) {
             ChiTietNhap ctn=(ChiTietNhap) list.get(i);
             ThongTinKho ttk=new ThongTinKho(maKho, nhap.getMaNCC(), ctn.getMaSanPham(), ctn.getSoLuong(), ctn.getGiaNhap());
+            int result=-1;
             if(ttkdao.check(ttk)==0)
             {
-                ttkdao.insert(ttk);
+                result=ttkdao.insert(ttk);
             }
             else
             {
-                ttkdao.update(ttk);
+                result=ttkdao.update(ttk);
             }
             xnn.next();
             

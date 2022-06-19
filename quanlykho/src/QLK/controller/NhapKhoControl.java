@@ -16,6 +16,8 @@ import QLK.model.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
 import QLK.view.QuanLyNK;
+import QLK.view.ThemCTPN;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,10 +28,17 @@ public class NhapKhoControl {
     ChiTietNhapDao ctd=new ChiTietNhapDao();
     NhaCungCapDao nccd=new NhaCungCapDao();
     QuanLyNK qlnk;
+    ThemCTPN themCTPN;
 
     public NhapKhoControl(QuanLyNK qlnk) {
         this.qlnk=qlnk;
     }
+    
+    public NhapKhoControl(ThemCTPN themCTPN)
+    {
+        this.themCTPN=themCTPN;
+    }
+    
     
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     public TableModel getModelTable(String maNV)
@@ -68,9 +77,19 @@ public class NhapKhoControl {
         if(deleteCTNhap==1 && deleteNhap==1)
         {
             qlnk.reset();
-            
+        }
+        else
+        {
+             JOptionPane.showMessageDialog(null," Xóa thất bại !");
         }
         
+    }
+    
+    public void deletePN(int maNhap)
+    {
+       int deleteNhap=nd.delete(maNhap);
+       themCTPN.result(deleteNhap);
+       
     }
 
     public DefaultTableModel getModelBy(int  x,String maNV) {

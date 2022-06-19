@@ -161,8 +161,9 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
                 
                 nc.add(nhap);
             }
-        } catch (Exception e) {
-            System.out.println(e.toString());
+        } 
+        catch (Exception e) 
+        {
             JOptionPane.showMessageDialog(null," Bạn phải chọn nhà cung cấp trước !");
         }
         

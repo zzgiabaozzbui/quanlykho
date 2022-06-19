@@ -261,7 +261,7 @@ public class taikhoancontroller {
                 String sql_select ="SELECT taikhoan.taikhoan,taikhoan.matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,taikhoan.trangthai,taikhoan.quyen\n" +
                                     " FROM taikhoan\n" +
                                     " INNER JOIN nhanvien\n" +
-                                    " ON nhanvien.maNV = taikhoan.maNV;";
+                                    " ON nhanvien.maNV = taikhoan.maNV where taikhoan.maNV='"+maNV+"';";
                 PreparedStatement ps = conn.prepareStatement(sql_select);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {

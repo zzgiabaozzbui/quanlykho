@@ -23,7 +23,9 @@ public class QuanLyNK extends javax.swing.JPanel {
      */
     NhapKhoControl nkc;
     String maNV="NV01";
+    
     public QuanLyNK() {
+        
         initComponents();
         nkc=new NhapKhoControl(this);
         table.setDefaultEditor(Object.class, null);
@@ -34,7 +36,7 @@ public class QuanLyNK extends javax.swing.JPanel {
    
      public void reset()
      {
-         this.removeAll();
+        this.removeAll();
         this.setLayout(new CardLayout());
         this.add(new QuanLyNK());
         this.validate();
@@ -285,10 +287,10 @@ public class QuanLyNK extends javax.swing.JPanel {
             row = table.getSelectedRow();
             int value = Integer.parseInt(table.getModel().getValueAt(row, column).toString());
          this.removeAll();
-        this.setLayout(new CardLayout());
-        this.add(new TTPhieuNhap(value));
-        this.validate();
-        this.repaint();  
+         this.setLayout(new CardLayout());
+         this.add(new TTPhieuNhap(value));
+         this.validate();
+         this.repaint();  
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null," Bạn phải chọn hàng trước !");
         }

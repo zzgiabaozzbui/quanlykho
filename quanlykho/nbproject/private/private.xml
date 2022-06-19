@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/XacNhanNhap.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/ThemCTPX.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/model/SanPhamDao.java</file>
@@ -38,6 +39,34 @@
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/util/PropertiesNVNow.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/view/QLXuatKho.java</file>
             <file>file:/D:/XAMPP/htdocs/quanlykho/quanlykho/src/QLK/Login/Home.java</file>
+=======
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/XacNhanXuatControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/NhanVienView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/KhoView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/CTXuatControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/QLKHome.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/Login/Home.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/SanPhamView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/Xuatexcel.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/QuanTriView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/taikhoancontroller.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/CTNhapControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/XacNhanNhapControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/KhachHangDao.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/QLXuatKho.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/NhanVienDao.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/NhaCungCapView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/XuatHome.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/model/KhachHang.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/ThemPhieuNhapControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/model/staff.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/XacNhanXuat.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/NhapKhoControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/controller/TTPhieuXuatControl.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/Login/login.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/view/KhachHangView.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/quanlykho/quanlykho/src/QLK/model/ThongTinKho.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

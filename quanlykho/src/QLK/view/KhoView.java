@@ -9,6 +9,7 @@ import QLK.controller.KhoController;
 import QLK.model.Kho;
 import QLK.model.SanPham;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.swing.JOptionPane;
@@ -23,6 +24,8 @@ import javax.swing.table.DefaultTableModel;
 public class KhoView extends javax.swing.JFrame {
     DefaultTableModel defaultTableModel;
     KhoController khoController=new KhoController();
+    List<Kho> listKhoCurrent=new ArrayList<>();
+    int idKhoCurrent=0;
     public String state;
     
     /**
@@ -293,6 +296,15 @@ public class KhoView extends javax.swing.JFrame {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
         state="insert";
+        for (Kho kho : listKhoCurrent) {
+                    if(listKhoCurrent.size()==0)
+                        idKhoCurrent=0;
+                    else
+                        idKhoCurrent=kho.getMaKho();
+                }
+                
+                
+                txtMaKho.setText((idKhoCurrent+1)+"");
         loadbtn(state);
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -349,9 +361,11 @@ public class KhoView extends javax.swing.JFrame {
                 int maKho= Integer.parseInt(txtMaKho.getText().trim());
                 String tenKho= txtTenKho.getText().trim();
                
-                if(tenKho.length()==0)
+                if(tenKho.length()>50)
                 {        
-                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tên kho","Cảnh báo",JOptionPane.WARNING_MESSAGE);                    
+                    JOptionPane.showMessageDialog(rootPane, "Bạn đã nhập quá 50 kí tự! Yêu cầu nhập lại","Cảnh báo",JOptionPane.WARNING_MESSAGE); 
+                    txtTenKho.setText("");
+                    txtTenKho.requestFocus();
                 }
                 else{                   
                     Kho kho= new Kho(maKho,tenKho);
@@ -487,11 +501,13 @@ public class KhoView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void loadKhoTable() {
+        listKhoCurrent.clear();
         defaultTableModel=new DefaultTableModel();
         String[] columnTitle = {"Mã Kho", "Tên Kho"};
         defaultTableModel.setColumnIdentifiers(columnTitle);
         Object[] dataRow;
         List<Kho> listKho = khoController.getAll();
+        listKhoCurrent.addAll(listKho);
         for (Kho k : listKho) {
             dataRow = new Object[]{k.getMaKho(), k.getTenKho()};
             defaultTableModel.addRow(dataRow);
@@ -528,7 +544,7 @@ public class KhoView extends javax.swing.JFrame {
                 break;
             case "insert":
                 
-                txtMaKho.setEnabled(true);
+                txtMaKho.setEnabled(false);
                 txtTenKho.setEnabled(true);
              
                 

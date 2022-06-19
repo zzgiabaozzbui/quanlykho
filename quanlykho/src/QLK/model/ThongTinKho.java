@@ -11,12 +11,12 @@ package QLK.model;
  */
 public class ThongTinKho {
     private int maKho;
-    private int maNCC;
+    private String maNCC;
     private String maSP;
     private int soLuong;
     private float giaXuat;
 
-    public ThongTinKho(int maKho, int maNCC, String maSP, int soLuong, float giaXuat) {
+    public ThongTinKho(int maKho, String maNCC, String maSP, int soLuong, float giaXuat) {
         this.maKho = maKho;
         this.maNCC = maNCC;
         this.maSP = maSP;
@@ -35,11 +35,11 @@ public class ThongTinKho {
         this.maKho = maKho;
     }
 
-    public int getMaNCC() {
+    public String getMaNCC() {
         return maNCC;
     }
 
-    public void setMaNCC(int maNCC) {
+    public void setMaNCC(String maNCC) {
         this.maNCC = maNCC;
     }
 

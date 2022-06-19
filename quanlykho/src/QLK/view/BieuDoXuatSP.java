@@ -7,6 +7,7 @@ package QLK.view;
 
 import QLK.model.ChiTietNhapDao;
 import QLK.model.SP;
+import QLK.model.chiTietXuatDao;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -40,11 +41,11 @@ public class BieuDoXuatSP extends javax.swing.JPanel {
     
      private static JFreeChart createChart(PieDataset dataset) {
         JFreeChart chart = ChartFactory.createPieChart(
-                "Nhập sản phẩm", dataset, true, true, true);
+                "Xuất sản phẩm", dataset, true, true, true);
         return chart;
     }
     private static PieDataset createDataset() {
-        ChiTietNhapDao ddvd=new ChiTietNhapDao();
+        chiTietXuatDao ddvd=new chiTietXuatDao();
        
         List<SP> list=new ArrayList<SP>();
         list=ddvd.getChart();

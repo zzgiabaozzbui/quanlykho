@@ -162,6 +162,7 @@ public class XacNhanNhap extends javax.swing.JPanel {
                 xnn.xacNhan(nhap,maNV);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null," Bạn phải chọn phiếu nhập trước !");
         }
         

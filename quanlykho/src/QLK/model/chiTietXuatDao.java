@@ -141,4 +141,31 @@ public class chiTietXuatDao {
         }
         return 0;
     }
+    
+     public List<SP> getChart() {
+       List list=new ArrayList<>();
+       SP sp=null;
+        try 
+        {
+            String query="SELECT sanpham.tenSanPham, SUM(chitietxuat.soLuong) as soLuong FROM sanpham,chitietxuat WHERE sanpham.maSanPham=chitietxuat.maSanPham GROUP BY sanpham.maSanPham";
+             PreparedStatement ps = conn.prepareStatement(query);
+
+             ResultSet rs=ps.executeQuery();
+             while(rs.next())
+             {
+                 sp=new SP();
+                 sp.setMaSP(rs.getString("tenSanPham"));
+     
+                 sp.setsLNhap(rs.getInt("soLuong"));
+                 
+                 list.add(sp);
+             }
+            
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+       return list;
+    }
 }

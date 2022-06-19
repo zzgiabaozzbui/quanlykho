@@ -5,6 +5,7 @@
  */
 package QLK.view;
 
+import QLK.Login.Home;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -197,7 +198,7 @@ public class XuatHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+        dispose();
         new Home().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

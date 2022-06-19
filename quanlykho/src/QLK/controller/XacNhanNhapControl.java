@@ -87,7 +87,7 @@ public class XacNhanNhapControl {
     }
 
     private int getMaKho(String maNV) {
-        return 1;
+        return Integer.parseInt(new NhanVienDao().get(maNV).get().getMaKho());
     }
     
 }

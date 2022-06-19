@@ -150,7 +150,7 @@ public class XacNhanNhap extends javax.swing.JPanel {
             int column = 0;
             row = table.getSelectedRow();
             String value = table.getModel().getValueAt(row, column).toString();
-            int maNCC = Integer.parseInt(table.getModel().getValueAt(row, 1).toString());
+            String maNCC = table.getModel().getValueAt(row, 1).toString();
             int k=JOptionPane.showConfirmDialog(null,"Bạn có muốn xác nhận phiếu nhập có mã "+table.getModel().getValueAt(row, 0).toString()+" ? ");
             if(k==0)
             {

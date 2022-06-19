@@ -13,13 +13,13 @@ import java.sql.Timestamp;
  */
 public class Nhap {
     private int maNhap;
-    private int maNCC;
+    private String maNCC;
     private String maNV;
     private Timestamp thoiGian;
     private float thanhTien;
     private int trangThai;
 
-    public Nhap(int maNhap, int maNCC, String maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
+    public Nhap(int maNhap, String maNCC, String maNV, Timestamp thoiGian, float thanhTien, int trangThai) {
         this.maNhap = maNhap;
         this.maNCC = maNCC;
         this.maNV = maNV;
@@ -39,11 +39,11 @@ public class Nhap {
         this.maNhap = maNhap;
     }
 
-    public int getMaNCC() {
+    public String getMaNCC() {
         return maNCC;
     }
 
-    public void setMaNCC(int maNCC) {
+    public void setMaNCC(String maNCC) {
         this.maNCC = maNCC;
     }
 

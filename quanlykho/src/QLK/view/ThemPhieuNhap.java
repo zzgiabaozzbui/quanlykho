@@ -158,7 +158,7 @@ public class ThemPhieuNhap extends javax.swing.JPanel {
             if(k==0)
             {
                 Nhap nhap=new Nhap();
-                nhap.setMaNCC(Integer.parseInt(value));
+                nhap.setMaNCC(value);
                 
                 nhap.setMaNV(maNV);
                 

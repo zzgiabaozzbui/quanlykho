@@ -44,13 +44,13 @@ public class NhaCungCapDao {
         }
        return list;
     }
-    public String getName(int maNCC) {
+    public String getName(String maNCC) {
        NhaCungCap ncc=null;
         try 
         {
             String query="Select * from nhacungcap where maNCC=?";
              PreparedStatement ps = conn.prepareStatement(query);
-             ps.setInt(1, maNCC);
+             ps.setString(1, maNCC);
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {

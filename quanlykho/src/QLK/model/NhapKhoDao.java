@@ -35,7 +35,7 @@ public class NhapKhoDao {
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
-                 nhap.setMaNCC(rs.getInt("maNCC"));
+                 nhap.setMaNCC(rs.getString("maNCC"));
                  nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));
@@ -64,7 +64,7 @@ public class NhapKhoDao {
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
-                 nhap.setMaNCC(rs.getInt("maNCC"));
+                 nhap.setMaNCC(rs.getString("maNCC"));
                  nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));
@@ -87,7 +87,7 @@ public class NhapKhoDao {
             
              String query="Insert into nhap values(null,?,?,DEFAULT,0,0)";
              PreparedStatement ps = conn.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS);
-             ps.setInt(1, nhap.getMaNCC());
+             ps.setString(1, nhap.getMaNCC());
              ps.setString(2, nhap.getMaNV());
              int k=ps.executeUpdate();
              ResultSet rs = ps.getGeneratedKeys();
@@ -225,7 +225,7 @@ public class NhapKhoDao {
              {
                  nhap=new Nhap();
                  nhap.setMaNhap(rs.getInt("maNhap"));
-                 nhap.setMaNCC(rs.getInt("maNCC"));
+                 nhap.setMaNCC(rs.getString("maNCC"));
                  nhap.setMaNV(rs.getString("maNV"));
                  nhap.setThoiGian(rs.getTimestamp("thoiGian"));
                  nhap.setThanhTien(rs.getFloat("thanhTien"));

@@ -13,6 +13,7 @@ import QLK.model.NhaCungCapDao;
 import QLK.model.Nhap;
 import QLK.model.NhapKhoDao;
 import QLK.view.ThemPhieuNhap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -52,7 +53,17 @@ public class ThemPhieuNhapControl {
     {
         
             int key=nhapdao.insert(nhap);
-            them.next(key);
+            
+            if(key!=-1)
+            {
+                them.next(key);
+                JOptionPane.showMessageDialog(null,"Tạo thành công ");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Tạo thất bại !");
+            }
+            
        
     }
     

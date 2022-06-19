@@ -48,10 +48,15 @@ public class BieuDoNhapSP extends javax.swing.JPanel {
        
         List<SP> list=new ArrayList<SP>();
         list=ddvd.getChart();
+        int sum=0;
+        for (SP sp : list) {
+            sum=sum+sp.getsLNhap();
+        }
+        
         
         DefaultPieDataset dataset = new DefaultPieDataset();
         for (SP sp : list) {
-            dataset.setValue("Sản phẩm:"+sp.getMaSP(), sp.getsLNhap());
+            dataset.setValue("Sản phẩm:"+sp.getMaSP()+" \n Số lượng :"+sp.getsLNhap()+"/"+sum, sp.getsLNhap());
         }
            
         return dataset;

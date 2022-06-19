@@ -177,14 +177,14 @@ public class ChiTietNhapDao {
        SP sp=null;
         try 
         {
-            String query="SELECT sanpham.maSanPham,SUM(chitietnhap.soLuong) as soLuongNhap FROM `sanpham` , chitietnhap WHERE sanpham.maSanPham=chitietnhap.maSanPham GROUP BY sanpham.maSanPham";
+            String query="SELECT sanpham.tenSanPham,SUM(chitietnhap.soLuong) as soLuongNhap FROM `sanpham` , chitietnhap WHERE sanpham.maSanPham=chitietnhap.maSanPham GROUP BY sanpham.maSanPham";
              PreparedStatement ps = conn.prepareStatement(query);
 
              ResultSet rs=ps.executeQuery();
              while(rs.next())
              {
                  sp=new SP();
-                 sp.setMaSP(rs.getString("maSanPham"));
+                 sp.setMaSP(rs.getString("tenSanPham"));
      
                  sp.setsLNhap(rs.getInt("soLuongNhap"));
                  

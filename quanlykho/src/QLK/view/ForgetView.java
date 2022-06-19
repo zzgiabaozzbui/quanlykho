@@ -5,6 +5,13 @@
  */
 package QLK.view;
 
+import QLK.Login.Home;
+import QLK.Login.login;
+import QLK.controller.ForgetController;
+import QLK.controller.taikhoancontroller;
+import QLK.util.checktext;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admins
@@ -31,20 +38,20 @@ public class ForgetView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        btnLogin = new javax.swing.JButton();
+        btnXN = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtPassword1 = new javax.swing.JPasswordField();
+        txtRePassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        txtUsername1 = new javax.swing.JTextField();
-        txtUsername2 = new javax.swing.JTextField();
+        txtemail = new javax.swing.JTextField();
+        txtsdt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtUsername3 = new javax.swing.JTextField();
+        txtcmnd = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,17 +88,17 @@ public class ForgetView extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setOpaque(false);
 
-        btnLogin.setBackground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("XÁC NHẬN");
-        btnLogin.setOpaque(false);
-        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnXN.setBackground(new java.awt.Color(255, 255, 255));
+        btnXN.setText("XÁC NHẬN");
+        btnXN.setOpaque(false);
+        btnXN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnLoginMouseClicked(evt);
+                btnXNMouseClicked(evt);
             }
         });
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+        btnXN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+                btnXNActionPerformed(evt);
             }
         });
 
@@ -115,7 +122,7 @@ public class ForgetView extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnXN, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -125,7 +132,7 @@ public class ForgetView extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXN, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -147,7 +154,7 @@ public class ForgetView extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         txtUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtUsername.setText("Nhập vào tên của bạn");
+        txtUsername.setText("Nhập vào tên tài khoản của bạn");
         txtUsername.setBorder(null);
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,11 +166,11 @@ public class ForgetView extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
 
-        txtPassword1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtPassword1.setBorder(null);
-        txtPassword1.addActionListener(new java.awt.event.ActionListener() {
+        txtRePassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtRePassword.setBorder(null);
+        txtRePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPassword1ActionPerformed(evt);
+                txtRePasswordActionPerformed(evt);
             }
         });
 
@@ -171,21 +178,21 @@ public class ForgetView extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Email:");
 
-        txtUsername1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtUsername1.setText("Nhập vào tên của bạn");
-        txtUsername1.setBorder(null);
-        txtUsername1.addActionListener(new java.awt.event.ActionListener() {
+        txtemail.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtemail.setText("Nhập vào tên email của bạn");
+        txtemail.setBorder(null);
+        txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername1ActionPerformed(evt);
+                txtemailActionPerformed(evt);
             }
         });
 
-        txtUsername2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtUsername2.setText("Nhập vào tên của bạn");
-        txtUsername2.setBorder(null);
-        txtUsername2.addActionListener(new java.awt.event.ActionListener() {
+        txtsdt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtsdt.setText("Nhập vào số điện thoại của bạn");
+        txtsdt.setBorder(null);
+        txtsdt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername2ActionPerformed(evt);
+                txtsdtActionPerformed(evt);
             }
         });
 
@@ -197,12 +204,12 @@ public class ForgetView extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cmnd:");
 
-        txtUsername3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtUsername3.setText("Nhập vào tên của bạn");
-        txtUsername3.setBorder(null);
-        txtUsername3.addActionListener(new java.awt.event.ActionListener() {
+        txtcmnd.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        txtcmnd.setText("Nhập vào số cmnd của bạn");
+        txtcmnd.setBorder(null);
+        txtcmnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsername3ActionPerformed(evt);
+                txtcmndActionPerformed(evt);
             }
         });
 
@@ -228,11 +235,11 @@ public class ForgetView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtPassword)
-                            .addComponent(txtUsername3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                            .addComponent(txtUsername2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsername1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtcmnd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(txtsdt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtemail, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPassword1))
+                            .addComponent(txtRePassword))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,26 +263,24 @@ public class ForgetView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(txtUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(txtUsername2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtsdt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(txtUsername3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtcmnd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(68, 68, 68)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(67, 67, 67)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(67, 67, 67))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtRePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -297,15 +302,52 @@ public class ForgetView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-    
-    }//GEN-LAST:event_btnLoginMouseClicked
+    private void btnXNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXNMouseClicked
+        String taikhoan = txtUsername.getText().toString();
+        String email = txtemail.getText().toString();
+        String sdt = txtsdt.getText().toString();
+        String cmnd = txtcmnd.getText().toString();
+        String ps = txtPassword.getPassword().toString();
+        String reps = txtRePassword.getPassword().toString();
+        taikhoancontroller tkc = new taikhoancontroller();
+        if(tkc.checkt(taikhoan)){
+            if(ps.equals(reps)){
+                if(new checktext().kiemTraEmail(email)){
+                    if(new checktext().kiemTraSDT(sdt)){
+                        if(new checktext().kiemTraSCMND(cmnd)){
+                            if(new ForgetController().updatePass(taikhoan,ps)){
+                                new ForgetController().updatePass(taikhoan,ps);
+                                JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thành công.");
+                            }else{
+                                JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thất bại.");
+                                new login().setVisible(true);
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane, "Định dạng số cmnd bị sai.");
+                            txtcmnd.requestFocus();
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Định dạng số điện thoại sai.");
+                        txtsdt.requestFocus();
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Định dạng của email sai.");
+                    txtemail.requestFocus();
+                }
+            }else
+                JOptionPane.showMessageDialog(rootPane, "Mật khẩu nhập lại phải giống mật khẩu đã nhập.");
+                txtPassword.requestFocus();
+        }else
+            JOptionPane.showMessageDialog(rootPane, "Tài khoản không tồn tại.");
+            txtUsername.requestFocus();
+    }//GEN-LAST:event_btnXNMouseClicked
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnXNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }//GEN-LAST:event_btnXNActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
@@ -321,23 +363,24 @@ public class ForgetView extends javax.swing.JFrame {
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
         this.dispose();
+        new login().setVisible(true);
     }//GEN-LAST:event_btnExitMouseClicked
 
-    private void txtPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassword1ActionPerformed
+    private void txtRePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRePasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassword1ActionPerformed
+    }//GEN-LAST:event_txtRePasswordActionPerformed
 
-    private void txtUsername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername1ActionPerformed
+    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername1ActionPerformed
+    }//GEN-LAST:event_txtemailActionPerformed
 
-    private void txtUsername2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername2ActionPerformed
+    private void txtsdtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsdtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername2ActionPerformed
+    }//GEN-LAST:event_txtsdtActionPerformed
 
-    private void txtUsername3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsername3ActionPerformed
+    private void txtcmndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcmndActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsername3ActionPerformed
+    }//GEN-LAST:event_txtcmndActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,7 +419,7 @@ public class ForgetView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnXN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -388,10 +431,10 @@ public class ForgetView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JPasswordField txtPassword1;
+    private javax.swing.JPasswordField txtRePassword;
     private javax.swing.JTextField txtUsername;
-    private javax.swing.JTextField txtUsername1;
-    private javax.swing.JTextField txtUsername2;
-    private javax.swing.JTextField txtUsername3;
+    private javax.swing.JTextField txtcmnd;
+    private javax.swing.JTextField txtemail;
+    private javax.swing.JTextField txtsdt;
     // End of variables declaration//GEN-END:variables
 }

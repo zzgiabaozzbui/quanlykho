@@ -53,7 +53,7 @@ public class taikhoancontroller {
    public int PQ(String ma) {
         int so = 0;
         try {
-            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT PhanQuyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -107,7 +107,7 @@ public class taikhoancontroller {
     public String getKhoa(String ma) {
         String so = "";
         try {
-            String sql_select = "SELECT TrangThai FROM dangnhap WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT TrangThai FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -128,7 +128,7 @@ public class taikhoancontroller {
     public int getCount(String tk) {
         int so = 0;
         try {
-            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM dangnhap WHERE PhanQuyen = '"+tk+"'";
+            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM "+TABLE_NAME+" WHERE PhanQuyen = '"+tk+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -142,7 +142,7 @@ public class taikhoancontroller {
     public String getmaNV(String tk) {
         String so = "";
         try {
-            String sql_select = "SELECT MaNV FROM dangnhap WHERE TaiKhoan = '"+tk+"'";
+            String sql_select = "SELECT MaNV FROM "+TABLE_NAME+" WHERE TaiKhoan = '"+tk+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -158,7 +158,7 @@ public class taikhoancontroller {
         int so = 0 ;
         String c ="";
         try {
-            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE MaNV = '"+ma+"'";
+            String sql_select = "SELECT PhanQuyen FROM "+TABLE_NAME+" WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -173,7 +173,7 @@ public class taikhoancontroller {
     public int getTong() {
         int so = 0;
         try {
-            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM dangnhap ";
+            String sql_select = "SELECT COUNT(PhanQuyen) AS dem FROM "+TABLE_NAME+" ";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
@@ -219,7 +219,7 @@ public class taikhoancontroller {
         List<staff> list = new ArrayList<>();
         try {
             String sql_select ="SELECT maNV,tenNV FROM nhanvien WHERE maNV NOT IN (SELECT nhanvien.maNV\n" +
-                                " FROM taikhoan\n" +
+                                " FROM "+TABLE_NAME+"\n" +
                                 " INNER JOIN nhanvien\n" +
                                 " ON nhanvien.maNV = taikhoan.maNV);";
             PreparedStatement ps = conn.prepareStatement(sql_select);
@@ -258,10 +258,10 @@ public class taikhoancontroller {
     public user getUser(String maNV) {
             user st = new user();
             try {
-                String sql_select ="SELECT taikhoan.taikhoan,taikhoan.matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,taikhoan.trangthai,taikhoan.quyen\n" +
-                                    " FROM taikhoan\n" +
+                String sql_select ="SELECT "+TABLE_NAME+".taikhoan,"+TABLE_NAME+".matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,"+TABLE_NAME+".trangthai,"+TABLE_NAME+".quyen\n" +
+                                    " FROM "+TABLE_NAME+"\n" +
                                     " INNER JOIN nhanvien\n" +
-                                    " ON nhanvien.maNV = taikhoan.maNV where taikhoan.maNV='"+maNV+"';";
+                                    " ON nhanvien.maNV = "+TABLE_NAME+".maNV where "+TABLE_NAME+".maNV='"+maNV+"';";
                 PreparedStatement ps = conn.prepareStatement(sql_select);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
@@ -293,10 +293,10 @@ public class taikhoancontroller {
     public List<user> getAll() {
         List<user> list = new ArrayList<>();
         try {
-            String sql_select ="SELECT taikhoan.taikhoan,taikhoan.matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,taikhoan.trangthai,taikhoan.quyen\n" +
-                                " FROM taikhoan\n" +
+            String sql_select ="SELECT "+TABLE_NAME+".taikhoan,"+TABLE_NAME+".matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,"+TABLE_NAME+".trangthai,"+TABLE_NAME+".quyen\n" +
+                                " FROM "+TABLE_NAME+"\n" +
                                 " INNER JOIN nhanvien\n" +
-                                " ON nhanvien.maNV = taikhoan.maNV;";
+                                " ON nhanvien.maNV = "+TABLE_NAME+".maNV;";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -320,7 +320,7 @@ public class taikhoancontroller {
 
     public int insert(taikhoan t) {
         try {
-            String sql_insert = "insert into taikhoan values(?, ?, ?,?,?)";
+            String sql_insert = "insert into "+TABLE_NAME+" values(?, ?, ?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql_insert, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, t.getTaikhoan());
             ps.setString(2, t.getMatkhau());
@@ -363,7 +363,7 @@ public class taikhoancontroller {
     }
     public int update(taikhoan t) {
         try {
-            String sql_update = "UPDATE taikhoan SET  matkhau = '"+t.getMatkhau()+"',"
+            String sql_update = "UPDATE "+TABLE_NAME+" SET  matkhau = '"+t.getMatkhau()+"',"
                     + "maNV = '"+t.getMaNV()+"', trangthai  = "+t.getTrangthai()+", "
                     + "quyen  = "+t.getQuyen()+" WHERE taikhoan = '"+t.getTaikhoan()+"' ";
             System.out.println(sql_update);
@@ -382,10 +382,10 @@ public class taikhoancontroller {
     public List<user> getAll(String key) {
         List<user> list = new ArrayList<>();
         try {
-            String sql_select ="SELECT taikhoan.taikhoan,taikhoan.matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,taikhoan.trangthai,taikhoan.quyen\n" +
-                                " FROM taikhoan\n" +
+            String sql_select ="SELECT "+TABLE_NAME+".taikhoan,"+TABLE_NAME+".matkhau,nhanvien.maNV,nhanvien.tennv,nhanvien.email,nhanvien.sdt,"+TABLE_NAME+".trangthai,"+TABLE_NAME+".quyen\n" +
+                                " FROM "+TABLE_NAME+"\n" +
                                 " INNER JOIN nhanvien\n" +
-                                " ON nhanvien.maNV = taikhoan.maNV where taikhoan like '%"+key+"%';";
+                                " ON nhanvien.maNV = taikhoan.maNV where "+TABLE_NAME+" like '%"+key+"%';";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

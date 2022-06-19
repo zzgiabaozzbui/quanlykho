@@ -24,6 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import QLK.model.staff;
 import QLK.model.user;
+import QLK.view.ForgetView;
 
 /**
  *
@@ -365,7 +366,7 @@ public class login extends javax.swing.JFrame {
         
         user st = staffd.getUser(ma);
         String chucvu = staffd.doiPQ(st.getQuyen());
-        String tt = staffd.doiTT(st.getTrangthai());
+        String tt = String.valueOf(st.getTrangthai());
         String ten = st.getTenNV();
         PropertiesNVNow pr = new PropertiesNVNow();
         System.out.println(chucvu);
@@ -412,15 +413,17 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void lblforgetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblforgetMouseClicked
-        Desktop desktop = Desktop.getDesktop();
-        try {
-             //thực hiện gọi chương trình duyệt web mở đường link
-            desktop.browse(new URI("https://www.facebook.com/adminQLKS"));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+//        Desktop desktop = Desktop.getDesktop();
+//        try {
+//             //thực hiện gọi chương trình duyệt web mở đường link
+//            desktop.browse(new URI("https://www.facebook.com/adminQLKS"));
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        } catch (URISyntaxException ex) {
+//            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+        this.dispose();
+        new ForgetView().setVisible(true);
             
     }//GEN-LAST:event_lblforgetMouseClicked
 

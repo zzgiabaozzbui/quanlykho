@@ -157,7 +157,7 @@ public class ChiTietNhapDao {
              }
              else
              {
-                 JOptionPane.showMessageDialog(null,"Thao tác thất bại !");
+                 
                  return 0;
              }
              

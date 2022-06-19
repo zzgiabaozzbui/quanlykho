@@ -72,15 +72,17 @@ public class NhapKhoControl {
     }
     public void delete(int maNhap)
     {
-        int deleteNhap=nd.delete(maNhap);
         int deleteCTNhap=ctd.delete2(maNhap);
-        if(deleteCTNhap==1 && deleteNhap==1)
+        int deleteNhap=nd.delete(maNhap);
+      
+        if(deleteCTNhap==-1 && deleteNhap==-1)
         {
-            qlnk.reset();
+            
+            JOptionPane.showMessageDialog(null," Xóa thất bại !");
         }
         else
         {
-             JOptionPane.showMessageDialog(null," Xóa thất bại !");
+             qlnk.reset();
         }
         
     }

@@ -422,19 +422,16 @@ public class KhoView extends javax.swing.JFrame {
                 break;
 
             case "update":
-                boolean checkUpdate=false;                 
-                maKho= Integer.parseInt(txtMaKho.getText().trim());
-                tenKho= txtTenKho.getText().trim();
-   
-                
-                
-                if(tenKho.length()==0)
+                boolean checkUpdate=false; 
+             
+                try {
+                    maKho= Integer.parseInt(txtMaKho.getText().trim());
+                    tenKho= txtTenKho.getText().trim();
+                    if(tenKho.length()==0)
                 {        
                     JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tên kho","Cảnh báo",JOptionPane.WARNING_MESSAGE);
                 }
                 else{
-
-
                     
                     Optional<Kho> checkmaKho = null;
                     Kho kho=new Kho(maKho,tenKho);
@@ -453,7 +450,16 @@ public class KhoView extends javax.swing.JFrame {
                      }
                         }
                     
-                }   
+                } 
+                } catch (Exception e) {
+                     JOptionPane.showMessageDialog(rootPane, "Vui lòng click vào bảng để sửa","Cảnh báo",JOptionPane.WARNING_MESSAGE);
+                }
+                
+  
+             
+               
+                
+                  
                 break;
            
                 

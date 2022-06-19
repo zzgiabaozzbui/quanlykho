@@ -168,6 +168,35 @@ public class ChiTietNhapDao {
             e.printStackTrace();
         }
         return 0;
+        
+        
+    }
+     
+     public List<SP> getChart() {
+       List list=new ArrayList<>();
+       SP sp=null;
+        try 
+        {
+            String query="SELECT sanpham.maSanPham,SUM(chitietnhap.soLuong) as soLuongNhap FROM `sanpham` , chitietnhap WHERE sanpham.maSanPham=chitietnhap.maSanPham GROUP BY sanpham.maSanPham";
+             PreparedStatement ps = conn.prepareStatement(query);
+
+             ResultSet rs=ps.executeQuery();
+             while(rs.next())
+             {
+                 sp=new SP();
+                 sp.setMaSP(rs.getString("maSanPham"));
+     
+                 sp.setsLNhap(rs.getInt("soLuongNhap"));
+                 
+                 list.add(sp);
+             }
+            
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+       return list;
     }
 
     

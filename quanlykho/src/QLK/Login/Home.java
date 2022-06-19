@@ -350,7 +350,7 @@ public class Home extends javax.swing.JFrame{
         btnK.setBackground(new java.awt.Color(255, 255, 255));
         btnK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnK.setForeground(new java.awt.Color(255, 255, 255));
-        btnK.setText("            Quản lý nhập kho");
+        btnK.setText("            Quản lý nhập");
         btnK.setMaximumSize(new java.awt.Dimension(150, 28));
         btnK.setMinimumSize(new java.awt.Dimension(150, 28));
         btnK.setPreferredSize(new java.awt.Dimension(150, 28));
@@ -634,8 +634,8 @@ public class Home extends javax.swing.JFrame{
     }//GEN-LAST:event_btnExitKeyTyped
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
-        //        HideMenu();
-        //        h.dispose();
+        HideMenu();
+        this.dispose();
     }//GEN-LAST:event_btnExitMouseClicked
 
     private void btnTTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTTMouseClicked

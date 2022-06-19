@@ -304,7 +304,7 @@ public class QuanTriView extends javax.swing.JFrame {
 
         txtSearch.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         txtSearch.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtSearch.setText("Tìm kiếm...");
+        txtSearch.setText("Tìm kiếm ...");
         txtSearch.setBorder(null);
         txtSearch.setName(""); // NOI18N
         txtSearch.addActionListener(new java.awt.event.ActionListener() {

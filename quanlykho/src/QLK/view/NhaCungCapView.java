@@ -397,7 +397,7 @@ public class NhaCungCapView extends javax.swing.JFrame {
             txtTenNCC.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên nhà cung cấp!");
             return;
-        } else if (txtSDT.getText().trim().equals("")) {
+        } else if (txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
             return;
@@ -485,7 +485,7 @@ public class NhaCungCapView extends javax.swing.JFrame {
             txtTenNCC.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên nhà cung cấp!");
             return;
-        } else if (txtSDT.getText().trim().equals("")) {
+        } else if (txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
             return;

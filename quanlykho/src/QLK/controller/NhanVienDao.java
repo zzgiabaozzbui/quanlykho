@@ -122,7 +122,7 @@ public class NhanVienDao implements Dao<staff> {
     public Optional<staff> get(String maNV) {
         staff nhanvien = new staff();
         try {
-            String sql_select_by_id = "CALL Proc_GetId_NhanVien(?)";
+            String sql_select_by_id = "SELECT * FROM nhanvien n where maNV = ?";
             PreparedStatement ps = conn.prepareStatement(sql_select_by_id);
             ps.setString(1, maNV);
             ResultSet rs = ps.executeQuery();

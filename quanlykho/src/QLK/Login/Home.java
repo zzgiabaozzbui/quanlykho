@@ -61,6 +61,7 @@ public class Home extends javax.swing.JFrame{
 
             btnKH.setVisible(false);
             btnBC.setVisible(false);
+            btnK.setVisible(false);
             
         
         }else if(st==2){
@@ -80,6 +81,7 @@ public class Home extends javax.swing.JFrame{
             btnBC.setVisible(true);
             btnTKN.setVisible(true);
             btnTKX.setVisible(false);
+            btnK.setVisible(false);
             btnBC.setVisible(true);
         
                 
@@ -92,7 +94,7 @@ public class Home extends javax.swing.JFrame{
 
             btnQL.setVisible(true);
             btnQLXK.setVisible(true);
-            btnK.setVisible(false);
+            btnK.setVisible(true);
             btnBC.setVisible(false);
 
         

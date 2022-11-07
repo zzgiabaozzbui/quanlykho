@@ -410,11 +410,11 @@ public class KhachHangView extends javax.swing.JFrame {
             txtTenKH.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên khách hàng!");
             return;
-        } else if (txtSDT.getText().trim().equals("")) {
+        } else if (txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
             return;
-        }else if (txtCMND.getText().trim().equals("")) {
+        }else if (txtCMND.getText().trim().equals("a") ||  txtCMND.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập chứng minh nhân dân!");
             return;
@@ -472,11 +472,11 @@ public class KhachHangView extends javax.swing.JFrame {
             txtTenKH.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên khách hàng!");
             return;
-        } else if (txtSDT.getText().trim().equals("")) {
+        } else if (txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
             return;
-        }else if (txtCMND.getText().trim().equals("")) {
+        }else if (txtCMND.getText().trim().equals("a") || txtCMND.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập chứng minh nhân dân!");
             return;

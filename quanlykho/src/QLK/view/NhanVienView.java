@@ -586,7 +586,7 @@ public class NhanVienView extends javax.swing.JFrame {
             txtTenNV.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên nhân viên!");
             return;
-        } else if (txtSDT.getText().trim().equals("")) {
+        } else if ( txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
             txtSDT.requestFocus();
             JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
             return;
@@ -649,7 +649,7 @@ public class NhanVienView extends javax.swing.JFrame {
                     txtTenNV.requestFocus();
                     JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập tên nhân viên!");
                     return;
-                } else if (txtSDT.getText().trim().equals("")) {
+                } else if (txtSDT.getText().trim().equals("a") || txtSDT.getText().trim().equals("")) {
                     txtSDT.requestFocus();
                     JOptionPane.showMessageDialog(rootPane, "Bạn phải nhập số điện thoại!");
                     return;
@@ -723,7 +723,7 @@ public class NhanVienView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-
+  Clear();
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
@@ -778,7 +778,7 @@ public class NhanVienView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMaNVActionPerformed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
-        int index = tblNhanVien.getSelectedRow();
+int index = tblNhanVien.getSelectedRow();
         String valueAt = (String) tblNhanVien.getValueAt(index, 0);
 
         staff pUpdate = nhanviendao.get(valueAt + "").get();
@@ -805,7 +805,7 @@ public class NhanVienView extends javax.swing.JFrame {
 
         btnThem.setEnabled(false);
         btnSua.setEnabled(true);
-        btnXoa.setEnabled(true);
+        btnXoa.setEnabled(true);        
     }//GEN-LAST:event_tblNhanVienMouseClicked
 
     /**
